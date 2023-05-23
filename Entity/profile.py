@@ -1,5 +1,5 @@
 class Profile:
-    def __init__():
+    def __init__(self):
         public_id = None,
         profile_urn_id = None,
         profile_summery = None,
@@ -10,11 +10,12 @@ class Profile:
         profile_location = None,
         profile_location_geo_id = None,
         profile_latest_company = None,
+        profile_latest_company_urn = None,
         profile_member_urn = None,
         profile_school_urn_id = None,
         profile_network_distance = None,
         invitation_shared_secret = None,
         invitation_entity_urn = None,
-        
+
 
         
