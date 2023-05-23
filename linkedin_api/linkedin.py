@@ -97,6 +97,7 @@ class Linkedin(object):
         evade()
 
         url = f"{self.client.API_BASE_URL if not base_request else self.client.LINKEDIN_BASE_URL}{uri}"
+        print(f"post URL--> {url}")
         return self.client.session.post(url, **kwargs)
 
     def get_profile_posts(self, public_id=None, urn_id=None, post_count=10):
@@ -952,7 +953,7 @@ class Linkedin(object):
 
         return res.json()
 
-    def send_message(self, message_body, conversation_urn_id=None, recipients=None):
+    def send_message(self, message_body, mailBoxURN, conversation_urn_id=None, recipients=None):
         """Send a message to a given conversation.
 
         :param message_body: Message text to send
@@ -965,29 +966,44 @@ class Linkedin(object):
         :return: Error state. If True, an error occured.
         :rtype: boolean
         """
-        params = {"action": "create"}
+        params = {"action": "createMessage"}
 
         if not (conversation_urn_id or recipients):
             self.logger.debug("Must provide [conversation_urn_id] or [recipients].")
             return True
 
+        # message_event = {
+        #     "eventCreate": {
+        #         "originToken": str(uuid.uuid4()),
+        #         "value": {
+        #             "com.linkedin.voyager.messaging.create.MessageCreate": {
+        #                 "attributedBody": {
+        #                     "text": message_body,
+        #                     "attributes": [],
+        #                 },
+        #                 "attachments": [],
+        #             }
+        #         },
+        #         "trackingId": generate_trackingId_as_charString(),
+        #     },
+        #     "dedupeByClientGeneratedToken": False,
+        # }
+        print(generate_trackingId_as_charString())
         message_event = {
-            "eventCreate": {
-                "originToken": str(uuid.uuid4()),
-                "value": {
-                    "com.linkedin.voyager.messaging.create.MessageCreate": {
-                        "attributedBody": {
-                            "text": message_body,
-                            "attributes": [],
-                        },
-                        "attachments": [],
-                    }
+            "message": {
+                "body": {
+                    "attributes": [],
+                    "text": message_body
                 },
-                "trackingId": generate_trackingId_as_charString(),
+                "renderContentUnions": [],
+                "originToken": str(uuid.uuid4())
             },
-            "dedupeByClientGeneratedToken": False,
+            "trackingId": generate_trackingId_as_charString(),
+            "mailboxUrn": mailBoxURN,
+            "dedupeByClientGeneratedToken": False
         }
 
+        # https://www.linkedin.com/voyager/api/voyagerMessagingDashComposeViewContexts?q=recipients&recipients=List(urn:li:fsd_profile:ACoAACNu6roB0lCYM9Pn2jum-IKVEIiyJKWpuZA)&type=CONNECTION_MESSAGE
         if conversation_urn_id and not recipients:
             res = self._post(
                 f"/messaging/conversations/{conversation_urn_id}/events",
@@ -995,14 +1011,10 @@ class Linkedin(object):
                 data=json.dumps(message_event),
             )
         elif recipients and not conversation_urn_id:
-            message_event["recipients"] = recipients
-            message_event["subtype"] = "MEMBER_TO_MEMBER"
-            payload = {
-                "keyVersion": "LEGACY_INBOX",
-                "conversationCreate": message_event,
-            }
+            message_event["hostRecipientUrns"] = recipients
+            payload = message_event
             res = self._post(
-                f"/messaging/conversations",
+                f"/voyagerMessagingDashMessengerMessages",
                 params=params,
                 data=json.dumps(payload),
             )
@@ -1101,7 +1113,7 @@ class Linkedin(object):
         return [element["invitation"] for element in response_payload["elements"]]
     
     def reply_invitation(
-        self, invitation_entity_urn, invitation_shared_secret, action="accept"
+        self, invitation_entity_urn, invitation_shared_secret, entity= "people", action="accept"
     ):
         """Respond to a connection invitation. By default, accept the invitation.
 
@@ -1115,29 +1127,23 @@ class Linkedin(object):
         :return: Success state. True if successful
         :rtype: boolean
         """
-        invitation_id = get_updated_urn(invitation_entity_urn)
+        if entity == "people":
+            invitation_id = get_updated_urn(invitation_entity_urn)
+        else:
+            invitation_id = invitation_entity_urn
         params = {"action": action}
         payload = json.dumps(
             {
-                # "invitationId": invitation_id,
                 "sharedSecret": invitation_shared_secret,
-                # "isGenericInvitation": False,
                 "invitationType": "CONNECTION"
             }
         )
 
-        # https://www.linkedin.com/voyager/api/voyagerRelationshipsDashInvitations/urn:li:fsd_invitation:7066307744638648320?action=accept
-        # {sharedSecret: "D4zARPeJ", invitationType: "CONNECTION"}
-        # invitationType:"CONNECTION"
-        # sharedSecret:"D4zARPeJ"}
-        print(f"URL---> {self.client.API_BASE_URL}/voyagerRelationshipsDashInvitations/{invitation_id}")
         res = self._post(
-            # f"{self.client.API_BASE_URL}/relationships/invitations/{invitation_id}",/
-            f"{self.client.API_BASE_URL}/voyagerRelationshipsDashInvitations/{invitation_id}",
+            f"/voyagerRelationshipsDashInvitations/{invitation_id}",
             params=params,
             data=payload,
         )
-        print(res.status_code)
         return res.status_code == 200
 
     def add_connection(self, profile_public_id, message="", profile_urn=None):
