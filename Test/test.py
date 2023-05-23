@@ -41,7 +41,7 @@ for invitation in invitations_recevied:
                 fromFirstName = fromMember['firstName']
                 fromLastName = fromMember['lastName']
                 fromPublicIdentifier = fromMember['publicIdentifier']
-                invitationFromUser = fromMember['dashEntityUrn']
+                fromUser = fromMember['dashEntityUrn']
                 fromTrackingId = fromMember['trackingId']
 
                 invitationType = invitation['invitationType']
@@ -68,7 +68,7 @@ for invitation in invitations_recevied:
                                 firstName = fromFirstName,
                                 portFolioURL = "https://ameyportfolio.netlify.app/",
                                 toFirstName = invitationSentToMember),
-                                recipients = [invitationFromUser]
+                                recipients = [fromUser]
                         )
 
                         if not res:
