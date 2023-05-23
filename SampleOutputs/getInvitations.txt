@@ -1,0 +1,188 @@
+[
+  {
+    "mailboxItemId": "urn:li:invitation:7065542001982668800",
+    "toMemberId": "ACoAAB72UEIBGWmnuwU_dQLmCThcwPlaI4lFJMk",
+    "fromMember": {
+      "memorialized": false,
+      "firstName": "Vishnu Datta",
+      "lastName": "Yanamandalala",
+      "dashEntityUrn": "urn:li:fsd_profile:ACoAAB_VvlMBs2I3WS64YrJh_qEIN5ANpSCx3r0",
+      "occupation": "Assistant Systems Engineer",
+      "objectUrn": "urn:li:member:534101587",
+      "entityUrn": "urn:li:fs_miniProfile:ACoAAB_VvlMBs2I3WS64YrJh_qEIN5ANpSCx3r0",
+      "publicIdentifier": "vishnu-datta-yanamandalala",
+      "picture": {
+        "com.linkedin.common.VectorImage": {
+          "artifacts": [
+            {
+              "width": 100,
+              "fileIdentifyingUrlPathSegment": "100_100/0/1612169859652?e=1690416000&v=beta&t=9VKXcOv19Cl1Q2wG_YuCOSEiV7n-h9W1G_7zqhNrgNg",
+              "expiresAt": 1690416000000,
+              "height": 100
+            },
+            {
+              "width": 200,
+              "fileIdentifyingUrlPathSegment": "200_200/0/1612169859652?e=1690416000&v=beta&t=_ENjY1joU0b1v1svW1ZvWUdyqRSR1ULE1mb-7yp5Cko",
+              "expiresAt": 1690416000000,
+              "height": 200
+            },
+            {
+              "width": 400,
+              "fileIdentifyingUrlPathSegment": "400_400/0/1612169859652?e=1690416000&v=beta&t=SLoLfj2YvuaLH8zoGDOuC8qe9COCo6AQ86YMHWqeETk",
+              "expiresAt": 1690416000000,
+              "height": 400
+            },
+            {
+              "width": 800,
+              "fileIdentifyingUrlPathSegment": "800_800/0/1612169859652?e=1690416000&v=beta&t=1Eh4H947EdR11I5pa4lUGGPxgmHGb58ffr_j7E9Nb0c",
+              "expiresAt": 1690416000000,
+              "height": 800
+            }
+          ],
+          "rootUrl": "https://media.licdn.com/dms/image/C5603AQHPP8PcuEieqQ/profile-displayphoto-shrink_"
+        }
+      },
+      "trackingId": "0QfPR/3gR3CyvVUWFhHWVw=="
+    },
+    "invitee": {
+      "com.linkedin.voyager.relationships.invitation.ProfileInvitee": {
+        "miniProfile": {
+          "memorialized": false,
+          "firstName": "Amey",
+          "lastName": "Bhilegaonkar",
+          "dashEntityUrn": "urn:li:fsd_profile:ACoAAB72UEIBGWmnuwU_dQLmCThcwPlaI4lFJMk",
+          "occupation": "Data Engineer | Building Scalable Data Solutions | ETL | Cloud Computing | Spark | Python | AWS | GCP | SQL | Machine Learning",
+          "objectUrn": "urn:li:member:519458882",
+          "entityUrn": "urn:li:fs_miniProfile:ACoAAB72UEIBGWmnuwU_dQLmCThcwPlaI4lFJMk",
+          "backgroundImage": {
+            "com.linkedin.common.VectorImage": {
+              "artifacts": [
+                {
+                  "width": 800,
+                  "fileIdentifyingUrlPathSegment": "200_800/0/1666126129920?e=1690416000&v=beta&t=ywIlOIDyzAGTtc8rj66hWKOzMYtHKUBgb3g5VGRXyao",
+                  "expiresAt": 1690416000000,
+                  "height": 200
+                },
+                {
+                  "width": 1400,
+                  "fileIdentifyingUrlPathSegment": "350_1400/0/1666126129920?e=1690416000&v=beta&t=xGTVYABNC4GhJaWfOc-8OA1MrnuRcD__XxDvD6vs0tw",
+                  "expiresAt": 1690416000000,
+                  "height": 350
+                }
+              ],
+              "rootUrl": "https://media.licdn.com/dms/image/D5616AQEEiu31BR8AXw/profile-displaybackgroundimage-shrink_"
+            }
+          },
+          "publicIdentifier": "amey-bhilegaonkar",
+          "picture": {
+            "com.linkedin.common.VectorImage": {
+              "artifacts": [
+                {
+                  "width": 200,
+                  "fileIdentifyingUrlPathSegment": "200_200/0/1666121211551?e=1685343600&v=beta&t=MnFvSSDbI5e_stI79VUStwHJcFG5hj-gzZQxKFctsrY",
+                  "expiresAt": 1685343600000,
+                  "height": 200
+                },
+                {
+                  "width": 400,
+                  "fileIdentifyingUrlPathSegment": "400_400/0/1666121211551?e=1685343600&v=beta&t=DM4s-ppGTwOzphm1jzEeJ9k0FUFY60uGvfkctDqVw0s",
+                  "expiresAt": 1685343600000,
+                  "height": 400
+                },
+                {
+                  "width": 800,
+                  "fileIdentifyingUrlPathSegment": "800_800/0/1666121211551?e=1685343600&v=beta&t=pIccxLpbO8Ze5x9dTHNB6YVNHaF7s6FPML4aik7-ycs",
+                  "expiresAt": 1685343600000,
+                  "height": 800
+                },
+                {
+                  "width": 100,
+                  "fileIdentifyingUrlPathSegment": "100_100/0/1666121211551?e=1685343600&v=beta&t=RKVjbmazVY-SdlxecQQaccUUQiB4fBZbho5zPFAYeqk",
+                  "expiresAt": 1685343600000,
+                  "height": 100
+                }
+              ],
+              "rootUrl": "https://media.licdn.com/dms/image/D5635AQE5wZzdY3PADw/profile-framedphoto-shrink_"
+            }
+          },
+          "trackingId": "5OJkTJS2SWCsk7SfatNuLw=="
+        }
+      }
+    },
+    "invitationType": "PENDING",
+    "entityUrn": "urn:li:fs_relInvitation:7065542001982668800",
+    "toMember": {
+      "memorialized": false,
+      "firstName": "Amey",
+      "lastName": "Bhilegaonkar",
+      "dashEntityUrn": "urn:li:fsd_profile:ACoAAB72UEIBGWmnuwU_dQLmCThcwPlaI4lFJMk",
+      "occupation": "Data Engineer | Building Scalable Data Solutions | ETL | Cloud Computing | Spark | Python | AWS | GCP | SQL | Machine Learning",
+      "objectUrn": "urn:li:member:519458882",
+      "entityUrn": "urn:li:fs_miniProfile:ACoAAB72UEIBGWmnuwU_dQLmCThcwPlaI4lFJMk",
+      "backgroundImage": {
+        "com.linkedin.common.VectorImage": {
+          "artifacts": [
+            {
+              "width": 800,
+              "fileIdentifyingUrlPathSegment": "200_800/0/1666126129920?e=1690416000&v=beta&t=ywIlOIDyzAGTtc8rj66hWKOzMYtHKUBgb3g5VGRXyao",
+              "expiresAt": 1690416000000,
+              "height": 200
+            },
+            {
+              "width": 1400,
+              "fileIdentifyingUrlPathSegment": "350_1400/0/1666126129920?e=1690416000&v=beta&t=xGTVYABNC4GhJaWfOc-8OA1MrnuRcD__XxDvD6vs0tw",
+              "expiresAt": 1690416000000,
+              "height": 350
+            }
+          ],
+          "rootUrl": "https://media.licdn.com/dms/image/D5616AQEEiu31BR8AXw/profile-displaybackgroundimage-shrink_"
+        }
+      },
+      "publicIdentifier": "amey-bhilegaonkar",
+      "picture": {
+        "com.linkedin.common.VectorImage": {
+          "artifacts": [
+            {
+              "width": 200,
+              "fileIdentifyingUrlPathSegment": "200_200/0/1666121211551?e=1685343600&v=beta&t=MnFvSSDbI5e_stI79VUStwHJcFG5hj-gzZQxKFctsrY",
+              "expiresAt": 1685343600000,
+              "height": 200
+            },
+            {
+              "width": 400,
+              "fileIdentifyingUrlPathSegment": "400_400/0/1666121211551?e=1685343600&v=beta&t=DM4s-ppGTwOzphm1jzEeJ9k0FUFY60uGvfkctDqVw0s",
+              "expiresAt": 1685343600000,
+              "height": 400
+            },
+            {
+              "width": 800,
+              "fileIdentifyingUrlPathSegment": "800_800/0/1666121211551?e=1685343600&v=beta&t=pIccxLpbO8Ze5x9dTHNB6YVNHaF7s6FPML4aik7-ycs",
+              "expiresAt": 1685343600000,
+              "height": 800
+            },
+            {
+              "width": 100,
+              "fileIdentifyingUrlPathSegment": "100_100/0/1666121211551?e=1685343600&v=beta&t=RKVjbmazVY-SdlxecQQaccUUQiB4fBZbho5zPFAYeqk",
+              "expiresAt": 1685343600000,
+              "height": 100
+            }
+          ],
+          "rootUrl": "https://media.licdn.com/dms/image/D5635AQE5wZzdY3PADw/profile-framedphoto-shrink_"
+        }
+      },
+      "trackingId": "5OJkTJS2SWCsk7SfatNuLw=="
+    },
+    "inviterActors": [],
+    "sentTime": 1684556495097,
+    "customMessage": false,
+    "sharedSecret": "HkMxZEwo",
+    "unseen": false
+  },
+  {
+    "entityUrn": "urn:li:fs_relInvitation:7058794745677926630",
+    "mailboxItemId": "urn:li:invitation:7058794745677926630",
+    "toMemberId": "ACoAAB72UEIBGWmnuwU_dQLmCThcwPlaI4lFJMk",
+    "customMessage": false,
+    "sharedSecret": "dWnNSn7T"
+  }
+]

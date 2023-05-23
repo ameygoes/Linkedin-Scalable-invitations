@@ -1,0 +1,13 @@
+{
+  "distance": {
+    "value": "DISTANCE_2",
+    "$type": "com.linkedin.voyager.common.MemberDistance"
+  },
+  "entityUrn": "urn:li:fs_profileNetworkInfo:ACoAACMdUSUBym-zwn0kNPH357R0fCWPlObLj48",
+  "following": false,
+  "followable": true,
+  "*followingInfo": "urn:li:fs_followingInfo:urn:li:member:ACoAACMdUSUBym-zwn0kNPH357R0fCWPlObLj48",
+  "followersCount": 190,
+  "connectionsCount": 190,
+  "$type": "com.linkedin.voyager.identity.profile.ProfileNetworkInfo"
+}
