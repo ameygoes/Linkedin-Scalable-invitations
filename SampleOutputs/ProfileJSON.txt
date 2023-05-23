@@ -1,0 +1,864 @@
+{
+  "summary": "As an experienced Data Engineer with expertise in large-scale distributed technologies, I am confident in my ability to deliver high-quality, efficient, and scalable solutions. With over 3+ years of experience managing data services using AWS and experience in ETL pipelines and frameworks such as Airflow, I possess a strong foundation in building team culture around a principled approach to professional work.\n\nMy technical proficiency in working with Linux, shell scripting, and networking technologies, as well as my experience with Apache Airflow, Jenkins, and CICD, enable me to excel in working within large projects and mosaic organizations. I am also well-versed in Cloud ecosystems, Kafka, Flink, Spark, and other distributed data systems, and have experience deploying and maintaining software on Linux systems.\n\nIn addition, I hold a Master's degree in Computer Science with a focus on Big Data, and possess advanced proficiency in Python, Java, and Scala, as well as experience in building user-focused visualizations using tools like Tableau. With my strong communication and organizational skills, I am able to explain technical topics to technical and non-technical audiences alike.\n\nIf you're looking for a Data Engineer with a passion for and understanding of key algorithms and tools for developing high-efficiency data processing systems, and the ability to thrive in a high energy fast-paced digital environment, look no further. I am ready to join your team and contribute my expertise towards the achievement of your business objectives.\n\nSee my portfolio: https://ameyportfolio.netlify.app/",
+  "industryName": "Computer Software",
+  "lastName": "Bhilegaonkar",
+  "locationName": "United States",
+  "student": false,
+  "geoCountryName": "United States",
+  "geoCountryUrn": "urn:li:fs_geo:103644278",
+  "geoLocationBackfilled": false,
+  "elt": false,
+  "birthDate": {
+    "month": 4,
+    "day": 22
+  },
+  "industryUrn": "urn:li:fs_industry:4",
+  "firstName": "Amey",
+  "entityUrn": "urn:li:fs_profile:ACoAAB72UEIBGWmnuwU_dQLmCThcwPlaI4lFJMk",
+  "geoLocation": {
+    "geoUrn": "urn:li:fs_geo:101526294"
+  },
+  "geoLocationName": "Tempe, Arizona",
+  "location": {
+    "basicLocation": {
+      "countryCode": "us"
+    }
+  },
+  "headline": "Data Engineer | Building Scalable Data Solutions | ETL | Cloud Computing | Spark | Python | AWS | GCP | SQL | Machine Learning",
+  "displayPictureUrl": "https://media.licdn.com/dms/image/D5635AQE5wZzdY3PADw/profile-framedphoto-shrink_",
+  "img_200_200": "200_200/0/1666121211551?e=1685325600&v=beta&t=_x1zb3uKCd4e-IUaReCbu6SRzhTxnAZRweVCEhNbIhI",
+  "img_400_400": "400_400/0/1666121211551?e=1685325600&v=beta&t=9x-3X700kx78RzGbhKHLFcxx5oU2WHGtscaAq1O8g9s",
+  "img_800_800": "800_800/0/1666121211551?e=1685325600&v=beta&t=CAddefx4TC7Hc13U6bS2lHuFuRdStgLUI5Gorq8t_EM",
+  "img_100_100": "100_100/0/1666121211551?e=1685325600&v=beta&t=gearZrPSaAJH5BsHa7LVV9P6pEkEU7ANG574xM5dW9A",
+  "profile_id": "ACoAAB72UEIBGWmnuwU_dQLmCThcwPlaI4lFJMk",
+  "profile_urn": "urn:li:fs_miniProfile:ACoAAB72UEIBGWmnuwU_dQLmCThcwPlaI4lFJMk",
+  "member_urn": "urn:li:member:519458882",
+  "public_id": "amey-bhilegaonkar",
+  "experience": [
+    {
+      "locationName": "Tempe, Arizona, United States",
+      "entityUrn": "urn:li:fs_position:(ACoAAB72UEIBGWmnuwU_dQLmCThcwPlaI4lFJMk,2002012396)",
+      "geoLocationName": "Tempe, Arizona, United States",
+      "geoUrn": "urn:li:fs_geo:101526294",
+      "companyName": "Arizona State University",
+      "timePeriod": {
+        "startDate": {
+          "month": 1,
+          "year": 2023
+        }
+      },
+      "description": "Grader - Intermediate Database Management System (IFT 300)\n\nASU, USA (Spring 2023 - Present)\n\n1. Assisted the professor in grading assignments, quizzes, and exams for a class of 67 students enrolled in IFT 300 - Intermediate Database Management System\n\n2. Reviewed and graded student work using a standardized rubric, providing feedback and guidance as needed\n\n3. Conducted online office hours to provide additional support and answer student questions related to course material and assignments\n\n4. Collaborated with the professor to ensure consistency in grading and to provide support for struggling students\n\n5. Utilized Blackboard and Microsoft Excel to manage and organize student grades and feedback\n\n6. Demonstrated an understanding of advanced database concepts, such as SQL, data modeling, and database design\n\n7. Communicated effectively with students and faculty, providing constructive feedback and encouraging a positive learning environment.",
+      "company": {
+        "employeeCountRange": {
+          "start": 10001
+        },
+        "industries": [
+          "Higher Education"
+        ]
+      },
+      "title": "Computer Science Grader ",
+      "region": "urn:li:fs_region:(us,0)",
+      "companyUrn": "urn:li:fs_miniCompany:4292",
+      "companyLogoUrl": "https://media.licdn.com/dms/image/C560BAQHDGjY1IZJuog/company-logo_"
+    },
+    {
+      "locationName": "Bengaluru, Karnataka, India",
+      "entityUrn": "urn:li:fs_position:(ACoAAB72UEIBGWmnuwU_dQLmCThcwPlaI4lFJMk,2002002934)",
+      "geoLocationName": "Bengaluru, Karnataka, India",
+      "geoUrn": "urn:li:fs_geo:105214831",
+      "companyName": "Publicis Sapient",
+      "timePeriod": {
+        "endDate": {
+          "month": 7,
+          "year": 2022
+        },
+        "startDate": {
+          "month": 4,
+          "year": 2022
+        }
+      },
+      "description": "I worked in an evolving team for Mcdonald's Client, to build a Data Build Tool (DBT) - DBT is a development framework that combines modular SQL with software engineering best practices to make data transformation reliable, fast and fun.\n\nI was responsible for - \n1. Automating Docker deployment pipeline for a static website - DBT docs -  into cloudrun.\n2. Creating different versions of DBT docs depending upon the language provided.\n3. Created parameter-based, translations script using Python to translate the given debt documents into required languages.\n4. Worked in different languages from English to Japanese, gained knowledge of Unicode characters.\n5. Also, was responsible for implementing an authentication system for users to access the DBT documentation page to add an extra layer of security.\n6. Implemented authentication system using 3 ways,\n   i. Firebase-Python integration using Django\n  ii. GCPs in house IAP tool - using HTTPS load balancers\n  iii. Cloud run's own triggers to control traffic.",
+      "company": {
+        "employeeCountRange": {
+          "start": 10001
+        },
+        "industries": [
+          "Management Consulting"
+        ]
+      },
+      "title": "Associate Software Development Engineer 2 - Data Analyst",
+      "region": "urn:li:fs_region:(in,0)",
+      "companyUrn": "urn:li:fs_miniCompany:10801655",
+      "companyLogoUrl": "https://media.licdn.com/dms/image/C560BAQFJ1mxjVEoZGw/company-logo_"
+    },
+    {
+      "locationName": "Bengaluru, Karnataka, India",
+      "entityUrn": "urn:li:fs_position:(ACoAAB72UEIBGWmnuwU_dQLmCThcwPlaI4lFJMk,2002005457)",
+      "geoLocationName": "Bengaluru, Karnataka, India",
+      "geoUrn": "urn:li:fs_geo:105214831",
+      "companyName": "Publicis Sapient",
+      "timePeriod": {
+        "endDate": {
+          "month": 4,
+          "year": 2022
+        },
+        "startDate": {
+          "month": 9,
+          "year": 2021
+        }
+      },
+      "description": "Lead a team of 3 for the Production Support track which was responsible for -\n1. Enhancing the Framework\n2. Resolving Dependencies\n3. Providing Support for Live Production Applications.\n\nTechnology Used: Java, Spring Boot, AWS, Cassandra, DataStax",
+      "company": {
+        "employeeCountRange": {
+          "start": 10001
+        },
+        "industries": [
+          "Management Consulting"
+        ]
+      },
+      "title": "Associate Software Development Engineer 2 - Data Engineer",
+      "region": "urn:li:fs_region:(in,0)",
+      "companyUrn": "urn:li:fs_miniCompany:10801655",
+      "companyLogoUrl": "https://media.licdn.com/dms/image/C560BAQFJ1mxjVEoZGw/company-logo_"
+    },
+    {
+      "locationName": "Bangalore Urban, Karnataka, India",
+      "entityUrn": "urn:li:fs_position:(ACoAAB72UEIBGWmnuwU_dQLmCThcwPlaI4lFJMk,1697668700)",
+      "geoLocationName": "Bangalore Urban, Karnataka, India",
+      "geoUrn": "urn:li:fs_geo:112376381",
+      "companyName": "Publicis Sapient",
+      "timePeriod": {
+        "endDate": {
+          "month": 9,
+          "year": 2021
+        },
+        "startDate": {
+          "month": 11,
+          "year": 2020
+        }
+      },
+      "description": "Responsible for -\n\t\t1. Modifying and Changing currently developer-centric deployment into CICD.\n\t\t2. Creating Jenkins jobs for Automating CICD for -\n\t\t\ti. Contenrized deployment.\n\t\t       ii. RealTime Processing frameworks.\n\t\t      iii. Batch Jobs.\n\t\t3. Automatic Resource provisioning using Terrafrom in AWS.\n\t\t4. Wrting Python Scripts for funtional testing of the freameworks.\n\t\tSkills - Jenkins, Groovy, Terrafrom, AWS, Python",
+      "company": {
+        "employeeCountRange": {
+          "start": 10001
+        },
+        "industries": [
+          "Management Consulting"
+        ]
+      },
+      "title": "Associate Software Development Engineer 2 - DevOps Engineer",
+      "region": "urn:li:fs_region:(in,0)",
+      "companyUrn": "urn:li:fs_miniCompany:10801655",
+      "companyLogoUrl": "https://media.licdn.com/dms/image/C560BAQFJ1mxjVEoZGw/company-logo_"
+    },
+    {
+      "locationName": "Bangalore Urban, Karnataka, India",
+      "entityUrn": "urn:li:fs_position:(ACoAAB72UEIBGWmnuwU_dQLmCThcwPlaI4lFJMk,1697671315)",
+      "geoLocationName": "Bangalore Urban, Karnataka, India",
+      "geoUrn": "urn:li:fs_geo:112376381",
+      "companyName": "Publicis Sapient",
+      "timePeriod": {
+        "endDate": {
+          "month": 10,
+          "year": 2020
+        },
+        "startDate": {
+          "month": 1,
+          "year": 2020
+        }
+      },
+      "description": "Was part of the Data Analytics Team, Supported and Enhanced the Live\nProject for the Client which included technologies and platforms such\nas Python, Dataflow, GCP, Shell Scripts, Airflow.\n\nResponsible for -\n\t1. Built a Data Validation Module from scratch to Verify inflow, intermediate flow and out-flow of \n        the data.\n\t2. Enhanced Email Notification Module to send out Mails more efficiently.\n\t3. Enhanced Data Science Code for Data Preprocessing Module.\n\t4. Enhanced and generalized File Download Module - which Downloads files more efficiently.",
+      "company": {
+        "employeeCountRange": {
+          "start": 10001
+        },
+        "industries": [
+          "Management Consulting"
+        ]
+      },
+      "title": "Associate Software Development Engineer - 1 - Data Analyst",
+      "region": "urn:li:fs_region:(in,0)",
+      "companyUrn": "urn:li:fs_miniCompany:10801655",
+      "companyLogoUrl": "https://media.licdn.com/dms/image/C560BAQFJ1mxjVEoZGw/company-logo_"
+    }
+  ],
+  "education": [
+    {
+      "courses": [
+        "urn:li:fs_course:(ACoAAB72UEIBGWmnuwU_dQLmCThcwPlaI4lFJMk,1679233678)",
+        "urn:li:fs_course:(ACoAAB72UEIBGWmnuwU_dQLmCThcwPlaI4lFJMk,1679267315)",
+        "urn:li:fs_course:(ACoAAB72UEIBGWmnuwU_dQLmCThcwPlaI4lFJMk,1679305760)"
+      ],
+      "entityUrn": "urn:li:fs_education:(ACoAAB72UEIBGWmnuwU_dQLmCThcwPlaI4lFJMk,811142650)",
+      "school": {
+        "objectUrn": "urn:li:school:17769",
+        "entityUrn": "urn:li:fs_miniSchool:17769",
+        "active": true,
+        "schoolName": "Arizona State University",
+        "trackingId": "BZ2A+fGkSTSOKTktc9zgdw==",
+        "logoUrl": "https://media.licdn.com/dms/image/C560BAQHDGjY1IZJuog/company-logo_"
+      },
+      "timePeriod": {
+        "endDate": {
+          "month": 8,
+          "year": 2024
+        },
+        "startDate": {
+          "month": 7,
+          "year": 2022
+        }
+      },
+      "description": "Fall 2022 Subjects:\n  1. CSE 543: Info Assurance & Security\n  2. CSE 575: Statistical Machine Learning\n  3. CSE 594: Topic: Spatial Data Science and Engineering",
+      "degreeName": "Master's degree",
+      "schoolName": "Arizona State University",
+      "fieldOfStudy": "Computer Science with Data Science Concentration",
+      "degreeUrn": "urn:li:fs_degree:500",
+      "schoolUrn": "urn:li:fs_miniSchool:17769"
+    },
+    {
+      "courses": [
+        "urn:li:fs_course:(ACoAAB72UEIBGWmnuwU_dQLmCThcwPlaI4lFJMk,182805555)",
+        "urn:li:fs_course:(ACoAAB72UEIBGWmnuwU_dQLmCThcwPlaI4lFJMk,182853701)",
+        "urn:li:fs_course:(ACoAAB72UEIBGWmnuwU_dQLmCThcwPlaI4lFJMk,182903814)",
+        "urn:li:fs_course:(ACoAAB72UEIBGWmnuwU_dQLmCThcwPlaI4lFJMk,182931759)",
+        "urn:li:fs_course:(ACoAAB72UEIBGWmnuwU_dQLmCThcwPlaI4lFJMk,182999594)",
+        "urn:li:fs_course:(ACoAAB72UEIBGWmnuwU_dQLmCThcwPlaI4lFJMk,183018529)",
+        "urn:li:fs_course:(ACoAAB72UEIBGWmnuwU_dQLmCThcwPlaI4lFJMk,183039534)",
+        "urn:li:fs_course:(ACoAAB72UEIBGWmnuwU_dQLmCThcwPlaI4lFJMk,183064005)",
+        "urn:li:fs_course:(ACoAAB72UEIBGWmnuwU_dQLmCThcwPlaI4lFJMk,183093088)",
+        "urn:li:fs_course:(ACoAAB72UEIBGWmnuwU_dQLmCThcwPlaI4lFJMk,183114317)"
+      ],
+      "entityUrn": "urn:li:fs_education:(ACoAAB72UEIBGWmnuwU_dQLmCThcwPlaI4lFJMk,354435520)",
+      "school": {
+        "objectUrn": "urn:li:school:20970",
+        "entityUrn": "urn:li:fs_miniSchool:20970",
+        "active": true,
+        "schoolName": "Pune Institute of Computer Technology",
+        "trackingId": "u92Cs5jCR9yhpV6LYvJ/LA==",
+        "logoUrl": "https://media.licdn.com/dms/image/C560BAQFMx5qjAC9X-w/company-logo_"
+      },
+      "activities": "Key Member of PICT Startup and Innovation Cell.\nPart of the College Badminton Team for 2 years.\nWon the Purushottam Karandak 2015 as Part of the College Theater Club.\nWon the Sanjeev Karandak in 2016 as Part of the College Theater Club.\nRunner up in Firodiya Karandak 2017 as Part of the College Theater Club.\nRepresented College at Various Dance Competitions for 3 years.",
+      "grade": "8.78",
+      "timePeriod": {
+        "endDate": {
+          "year": 2019
+        },
+        "startDate": {
+          "year": 2015
+        }
+      },
+      "description": "Computer Science Courses I had taken - \n1. Fundamentals of Programming Langauge \n2. Data Structures and Algorithms\n3. OOP\n4. System Design\n5. Networking and Security\n6. Operating Systems\n7. Microcontrollers\n8. Android Development\n9. Machine Learning \n10. Artificial Intelligence",
+      "degreeName": "Bachelor of Engineering",
+      "schoolName": "Pune Institute of Computer Technology",
+      "fieldOfStudy": "Electrical, Electronics and Communications Engineering",
+      "schoolUrn": "urn:li:fs_miniSchool:20970"
+    },
+    {
+      "entityUrn": "urn:li:fs_education:(ACoAAB72UEIBGWmnuwU_dQLmCThcwPlaI4lFJMk,689610135)",
+      "activities": "Won the Photography Competition.",
+      "grade": "84.77",
+      "timePeriod": {
+        "endDate": {
+          "year": 2015
+        },
+        "startDate": {
+          "year": 2013
+        }
+      },
+      "degreeName": "Higher Secondary ",
+      "schoolName": "S.P. College ",
+      "fieldOfStudy": "Science and Mathematics"
+    }
+  ],
+  "languages": [
+    {
+      "name": "English",
+      "proficiency": "FULL_PROFESSIONAL"
+    },
+    {
+      "name": "Hindi",
+      "proficiency": "NATIVE_OR_BILINGUAL"
+    },
+    {
+      "name": "Marathi",
+      "proficiency": "NATIVE_OR_BILINGUAL"
+    }
+  ],
+  "publications": [],
+  "certifications": [
+    {
+      "authority": "NPTEL",
+      "name": "Introduction To Machine Learning",
+      "timePeriod": {
+        "startDate": {
+          "month": 10,
+          "year": 2017
+        }
+      },
+      "licenseNumber": "NPTEL17CS26S2630740",
+      "company": {
+        "objectUrn": "urn:li:company:13229455",
+        "entityUrn": "urn:li:fs_miniCompany:13229455",
+        "name": "NPTEL",
+        "showcase": false,
+        "active": true,
+        "logo": {
+          "com.linkedin.common.VectorImage": {
+            "artifacts": [
+              {
+                "width": 200,
+                "fileIdentifyingUrlPathSegment": "200_200/0/1519898420366?e=1692835200&v=beta&t=oH11E2QYeHJVjAO-h1Ez9BQzpczan8AgSzGai6OpJrY",
+                "expiresAt": 1692835200000,
+                "height": 200
+              },
+              {
+                "width": 100,
+                "fileIdentifyingUrlPathSegment": "100_100/0/1519898420366?e=1692835200&v=beta&t=K6GI0S5ONha3pFxekeDJU9BZt3T8dsRneD7g3whjIXg",
+                "expiresAt": 1692835200000,
+                "height": 100
+              },
+              {
+                "width": 400,
+                "fileIdentifyingUrlPathSegment": "400_400/0/1519898420366?e=1692835200&v=beta&t=LBMI8zaR6BV5r802OADtbI1H_vBk4lKXKhWzJZQg3k8",
+                "expiresAt": 1692835200000,
+                "height": 400
+              }
+            ],
+            "rootUrl": "https://media.licdn.com/dms/image/C4D0BAQHJZGa_G2gwUg/company-logo_"
+          }
+        },
+        "universalName": "nptel",
+        "dashCompanyUrn": "urn:li:fsd_company:13229455",
+        "trackingId": "iY7EDLE8RCaQrnBrZrodfg=="
+      },
+      "displaySource": "nptel.ac.in",
+      "companyUrn": "urn:li:fs_miniCompany:13229455",
+      "url": "http://nptel.ac.in/noc/social_cert/noc17-cs26/NPTEL17CS26S2630740171056711.jpg"
+    },
+    {
+      "authority": "SoloLearn",
+      "name": "SQL fundamental course",
+      "timePeriod": {
+        "startDate": {
+          "month": 6,
+          "year": 2018
+        }
+      },
+      "company": {
+        "objectUrn": "urn:li:company:9435690",
+        "entityUrn": "urn:li:fs_miniCompany:9435690",
+        "name": "Sololearn",
+        "showcase": false,
+        "active": true,
+        "logo": {
+          "com.linkedin.common.VectorImage": {
+            "artifacts": [
+              {
+                "width": 200,
+                "fileIdentifyingUrlPathSegment": "200_200/0/1625174152948?e=1692835200&v=beta&t=keO47M65qM5mtcQBHiyJTOvMlYqckkk_Cy43bJQyNCs",
+                "expiresAt": 1692835200000,
+                "height": 200
+              },
+              {
+                "width": 100,
+                "fileIdentifyingUrlPathSegment": "100_100/0/1625174152948?e=1692835200&v=beta&t=zI0gtGIt-J2bLH6SGoksCrERN9v3G9IoJUCeA5FsINU",
+                "expiresAt": 1692835200000,
+                "height": 100
+              },
+              {
+                "width": 400,
+                "fileIdentifyingUrlPathSegment": "400_400/0/1625174152948?e=1692835200&v=beta&t=Kh5kAQj8k0g1Oz4ORSXoGjDWhV3qsqXOPN1tcXkH8RQ",
+                "expiresAt": 1692835200000,
+                "height": 400
+              }
+            ],
+            "rootUrl": "https://media.licdn.com/dms/image/C4D0BAQHER-dvTqh2tA/company-logo_"
+          }
+        },
+        "universalName": "sololearn-inc-",
+        "dashCompanyUrn": "urn:li:fsd_company:9435690",
+        "trackingId": "20WM3fW6R2GEKkExc2mGEQ=="
+      },
+      "companyUrn": "urn:li:fs_miniCompany:9435690"
+    },
+    {
+      "authority": "Coursera",
+      "name": "Machine Learning",
+      "timePeriod": {
+        "startDate": {
+          "month": 7,
+          "year": 2018
+        }
+      },
+      "licenseNumber": "5NA5TY6QLVHS",
+      "company": {
+        "objectUrn": "urn:li:company:2453129",
+        "entityUrn": "urn:li:fs_miniCompany:2453129",
+        "name": "Coursera",
+        "showcase": false,
+        "active": true,
+        "logo": {
+          "com.linkedin.common.VectorImage": {
+            "artifacts": [
+              {
+                "width": 200,
+                "fileIdentifyingUrlPathSegment": "200_200/0/1608039227697?e=1692835200&v=beta&t=o4LB9dEAaGDE7zrkRT3DloIPLkSbJr00hKrhnkV1BjI",
+                "expiresAt": 1692835200000,
+                "height": 200
+              },
+              {
+                "width": 100,
+                "fileIdentifyingUrlPathSegment": "100_100/0/1608039227697?e=1692835200&v=beta&t=TCvdqjMZ6b1W8ke9FPb4JsVbpyJx6NFp4NlBmYR2yfg",
+                "expiresAt": 1692835200000,
+                "height": 100
+              },
+              {
+                "width": 400,
+                "fileIdentifyingUrlPathSegment": "400_400/0/1608039227697?e=1692835200&v=beta&t=_u2czDrPgwOK2OGK0wz_bnGkbLrCqQF5Sty78GbeqGs",
+                "expiresAt": 1692835200000,
+                "height": 400
+              }
+            ],
+            "rootUrl": "https://media.licdn.com/dms/image/C4D0BAQGexnfBxeEG-g/company-logo_"
+          }
+        },
+        "universalName": "coursera",
+        "dashCompanyUrn": "urn:li:fsd_company:2453129",
+        "trackingId": "w5Pi7k6hRGqJamlancZWjA=="
+      },
+      "displaySource": "coursera.org",
+      "companyUrn": "urn:li:fs_miniCompany:2453129",
+      "url": "https://www.coursera.org/account/accomplishments/verify/5NA5TY6QLVHS"
+    },
+    {
+      "authority": "LinkedIn",
+      "name": "Deep Learning: Face Recognition",
+      "timePeriod": {
+        "startDate": {
+          "month": 11,
+          "year": 2020
+        }
+      },
+      "company": {
+        "objectUrn": "urn:li:company:1337",
+        "entityUrn": "urn:li:fs_miniCompany:1337",
+        "name": "LinkedIn",
+        "showcase": false,
+        "active": true,
+        "logo": {
+          "com.linkedin.common.VectorImage": {
+            "artifacts": [
+              {
+                "width": 200,
+                "fileIdentifyingUrlPathSegment": "200_200/0/1638831589865?e=1692835200&v=beta&t=cAK17KuGjp3LXMl0Qp-Dw-WCvzyG5T87T5-TpVtS_rs",
+                "expiresAt": 1692835200000,
+                "height": 200
+              },
+              {
+                "width": 100,
+                "fileIdentifyingUrlPathSegment": "100_100/0/1638831589865?e=1692835200&v=beta&t=Bp2pslE0jaCLMXm5KqSKvUgP9YE9xfWRvMmuhSr-1tY",
+                "expiresAt": 1692835200000,
+                "height": 100
+              },
+              {
+                "width": 400,
+                "fileIdentifyingUrlPathSegment": "400_400/0/1638831589865?e=1692835200&v=beta&t=ofoaSqWa9_65roMJEqb2WkXahnIHoEfuXfXtiRMRDDs",
+                "expiresAt": 1692835200000,
+                "height": 400
+              }
+            ],
+            "rootUrl": "https://media.licdn.com/dms/image/C560BAQHaVYd13rRz3A/company-logo_"
+          }
+        },
+        "universalName": "linkedin",
+        "dashCompanyUrn": "urn:li:fsd_company:1337",
+        "trackingId": "lwIO1IqsTBqCEGK6zXHwaw=="
+      },
+      "displaySource": "linkedin.com",
+      "companyUrn": "urn:li:fs_miniCompany:1337",
+      "url": "https://www.linkedin.com/learning/certificates/667c6f1e4a0e0af987169a0c9e28ad1088c030e6927c734e8ca81b92896856ca?trk=backfilled_certificate"
+    },
+    {
+      "authority": "Google",
+      "name": "Associate Cloud Engineer",
+      "timePeriod": {
+        "endDate": {
+          "month": 11,
+          "year": 2022
+        },
+        "startDate": {
+          "month": 11,
+          "year": 2020
+        }
+      },
+      "licenseNumber": "25039360",
+      "company": {
+        "objectUrn": "urn:li:company:1441",
+        "entityUrn": "urn:li:fs_miniCompany:1441",
+        "name": "Google",
+        "showcase": false,
+        "active": true,
+        "logo": {
+          "com.linkedin.common.VectorImage": {
+            "artifacts": [
+              {
+                "width": 200,
+                "fileIdentifyingUrlPathSegment": "200_200/0/1519856215226?e=1692835200&v=beta&t=uup7Uybuxgl0BgTt_28sitHQ3DFKNoZws5ga8-snQo4",
+                "expiresAt": 1692835200000,
+                "height": 200
+              },
+              {
+                "width": 100,
+                "fileIdentifyingUrlPathSegment": "100_100/0/1519856215226?e=1692835200&v=beta&t=ZjejX8YeBCi3RpoeqKbcYI1kOZ-20rtzTv1wkqiiJaE",
+                "expiresAt": 1692835200000,
+                "height": 100
+              },
+              {
+                "width": 400,
+                "fileIdentifyingUrlPathSegment": "400_400/0/1519856215226?e=1692835200&v=beta&t=CzeQp_xBlNBPQK8rn-1hprq8sTgCx-paQXJ4fBuOonI",
+                "expiresAt": 1692835200000,
+                "height": 400
+              }
+            ],
+            "rootUrl": "https://media.licdn.com/dms/image/C4D0BAQHiNSL4Or29cg/company-logo_"
+          }
+        },
+        "universalName": "google",
+        "dashCompanyUrn": "urn:li:fsd_company:1441",
+        "trackingId": "vPHXh8nNSimED4gfKwrM+A=="
+      },
+      "displaySource": "credential.net",
+      "companyUrn": "urn:li:fs_miniCompany:1441",
+      "url": "https://www.credential.net/c799d945-5e89-47a3-845e-8b97575a8342"
+    },
+    {
+      "authority": "LinkedIn",
+      "name": "Building Deep Learning Applications with Keras 2.0",
+      "timePeriod": {
+        "startDate": {
+          "month": 11,
+          "year": 2020
+        }
+      },
+      "company": {
+        "objectUrn": "urn:li:company:1337",
+        "entityUrn": "urn:li:fs_miniCompany:1337",
+        "name": "LinkedIn",
+        "showcase": false,
+        "active": true,
+        "logo": {
+          "com.linkedin.common.VectorImage": {
+            "artifacts": [
+              {
+                "width": 200,
+                "fileIdentifyingUrlPathSegment": "200_200/0/1638831589865?e=1692835200&v=beta&t=cAK17KuGjp3LXMl0Qp-Dw-WCvzyG5T87T5-TpVtS_rs",
+                "expiresAt": 1692835200000,
+                "height": 200
+              },
+              {
+                "width": 100,
+                "fileIdentifyingUrlPathSegment": "100_100/0/1638831589865?e=1692835200&v=beta&t=Bp2pslE0jaCLMXm5KqSKvUgP9YE9xfWRvMmuhSr-1tY",
+                "expiresAt": 1692835200000,
+                "height": 100
+              },
+              {
+                "width": 400,
+                "fileIdentifyingUrlPathSegment": "400_400/0/1638831589865?e=1692835200&v=beta&t=ofoaSqWa9_65roMJEqb2WkXahnIHoEfuXfXtiRMRDDs",
+                "expiresAt": 1692835200000,
+                "height": 400
+              }
+            ],
+            "rootUrl": "https://media.licdn.com/dms/image/C560BAQHaVYd13rRz3A/company-logo_"
+          }
+        },
+        "universalName": "linkedin",
+        "dashCompanyUrn": "urn:li:fsd_company:1337",
+        "trackingId": "/rYVa8rtTcSORd+aky7NDQ=="
+      },
+      "displaySource": "linkedin.com",
+      "companyUrn": "urn:li:fs_miniCompany:1337",
+      "url": "https://www.linkedin.com/learning/certificates/de6dd109f68c87ccd0bee6e9821ff79c7cb07869664704adc7e72bbd3a33e274?trk=backfilled_certificate"
+    },
+    {
+      "authority": "LinkedIn",
+      "name": "Deep Learning: Image Recognition",
+      "timePeriod": {
+        "startDate": {
+          "month": 11,
+          "year": 2020
+        }
+      },
+      "company": {
+        "objectUrn": "urn:li:company:1337",
+        "entityUrn": "urn:li:fs_miniCompany:1337",
+        "name": "LinkedIn",
+        "showcase": false,
+        "active": true,
+        "logo": {
+          "com.linkedin.common.VectorImage": {
+            "artifacts": [
+              {
+                "width": 200,
+                "fileIdentifyingUrlPathSegment": "200_200/0/1638831589865?e=1692835200&v=beta&t=cAK17KuGjp3LXMl0Qp-Dw-WCvzyG5T87T5-TpVtS_rs",
+                "expiresAt": 1692835200000,
+                "height": 200
+              },
+              {
+                "width": 100,
+                "fileIdentifyingUrlPathSegment": "100_100/0/1638831589865?e=1692835200&v=beta&t=Bp2pslE0jaCLMXm5KqSKvUgP9YE9xfWRvMmuhSr-1tY",
+                "expiresAt": 1692835200000,
+                "height": 100
+              },
+              {
+                "width": 400,
+                "fileIdentifyingUrlPathSegment": "400_400/0/1638831589865?e=1692835200&v=beta&t=ofoaSqWa9_65roMJEqb2WkXahnIHoEfuXfXtiRMRDDs",
+                "expiresAt": 1692835200000,
+                "height": 400
+              }
+            ],
+            "rootUrl": "https://media.licdn.com/dms/image/C560BAQHaVYd13rRz3A/company-logo_"
+          }
+        },
+        "universalName": "linkedin",
+        "dashCompanyUrn": "urn:li:fsd_company:1337",
+        "trackingId": "IZJTGW8pQASYJsWEwGZn6w=="
+      },
+      "displaySource": "linkedin.com",
+      "companyUrn": "urn:li:fs_miniCompany:1337",
+      "url": "https://www.linkedin.com/learning/certificates/b8362338ae731714a861236ae33d0b8151dbb0730ae37be2287188dc0c16382b?trk=backfilled_certificate"
+    },
+    {
+      "authority": "LinkedIn",
+      "name": "Learning Python",
+      "timePeriod": {
+        "startDate": {
+          "month": 11,
+          "year": 2020
+        }
+      },
+      "company": {
+        "objectUrn": "urn:li:company:1337",
+        "entityUrn": "urn:li:fs_miniCompany:1337",
+        "name": "LinkedIn",
+        "showcase": false,
+        "active": true,
+        "logo": {
+          "com.linkedin.common.VectorImage": {
+            "artifacts": [
+              {
+                "width": 200,
+                "fileIdentifyingUrlPathSegment": "200_200/0/1638831589865?e=1692835200&v=beta&t=cAK17KuGjp3LXMl0Qp-Dw-WCvzyG5T87T5-TpVtS_rs",
+                "expiresAt": 1692835200000,
+                "height": 200
+              },
+              {
+                "width": 100,
+                "fileIdentifyingUrlPathSegment": "100_100/0/1638831589865?e=1692835200&v=beta&t=Bp2pslE0jaCLMXm5KqSKvUgP9YE9xfWRvMmuhSr-1tY",
+                "expiresAt": 1692835200000,
+                "height": 100
+              },
+              {
+                "width": 400,
+                "fileIdentifyingUrlPathSegment": "400_400/0/1638831589865?e=1692835200&v=beta&t=ofoaSqWa9_65roMJEqb2WkXahnIHoEfuXfXtiRMRDDs",
+                "expiresAt": 1692835200000,
+                "height": 400
+              }
+            ],
+            "rootUrl": "https://media.licdn.com/dms/image/C560BAQHaVYd13rRz3A/company-logo_"
+          }
+        },
+        "universalName": "linkedin",
+        "dashCompanyUrn": "urn:li:fsd_company:1337",
+        "trackingId": "OOospIvVSWCHBurDWdPAlQ=="
+      },
+      "displaySource": "linkedin.com",
+      "companyUrn": "urn:li:fs_miniCompany:1337",
+      "url": "https://www.linkedin.com/learning/certificates/71c0b368018b4c3acd77379eb642df7a7ec50308837ff0f642d1545b184609b6?trk=backfilled_certificate"
+    },
+    {
+      "authority": "LinkedIn",
+      "name": "Advanced Python",
+      "timePeriod": {
+        "startDate": {
+          "month": 2,
+          "year": 2021
+        }
+      },
+      "company": {
+        "objectUrn": "urn:li:company:1337",
+        "entityUrn": "urn:li:fs_miniCompany:1337",
+        "name": "LinkedIn",
+        "showcase": false,
+        "active": true,
+        "logo": {
+          "com.linkedin.common.VectorImage": {
+            "artifacts": [
+              {
+                "width": 200,
+                "fileIdentifyingUrlPathSegment": "200_200/0/1638831589865?e=1692835200&v=beta&t=cAK17KuGjp3LXMl0Qp-Dw-WCvzyG5T87T5-TpVtS_rs",
+                "expiresAt": 1692835200000,
+                "height": 200
+              },
+              {
+                "width": 100,
+                "fileIdentifyingUrlPathSegment": "100_100/0/1638831589865?e=1692835200&v=beta&t=Bp2pslE0jaCLMXm5KqSKvUgP9YE9xfWRvMmuhSr-1tY",
+                "expiresAt": 1692835200000,
+                "height": 100
+              },
+              {
+                "width": 400,
+                "fileIdentifyingUrlPathSegment": "400_400/0/1638831589865?e=1692835200&v=beta&t=ofoaSqWa9_65roMJEqb2WkXahnIHoEfuXfXtiRMRDDs",
+                "expiresAt": 1692835200000,
+                "height": 400
+              }
+            ],
+            "rootUrl": "https://media.licdn.com/dms/image/C560BAQHaVYd13rRz3A/company-logo_"
+          }
+        },
+        "universalName": "linkedin",
+        "dashCompanyUrn": "urn:li:fsd_company:1337",
+        "trackingId": "KAik74tbQ+Kf/SqLyrdZyg=="
+      },
+      "displaySource": "linkedin.com",
+      "companyUrn": "urn:li:fs_miniCompany:1337",
+      "url": "https://www.linkedin.com/learning/certificates/20b332a63989076433fd1bf2e4d128a513206056379c257913ee34205b3befea?trk=backfilled_certificate"
+    },
+    {
+      "authority": "HackerRank",
+      "name": "Python (Basic)",
+      "licenseNumber": "54A207DBAA63",
+      "company": {
+        "objectUrn": "urn:li:company:435210",
+        "entityUrn": "urn:li:fs_miniCompany:435210",
+        "name": "HackerRank",
+        "showcase": false,
+        "active": true,
+        "logo": {
+          "com.linkedin.common.VectorImage": {
+            "artifacts": [
+              {
+                "width": 200,
+                "fileIdentifyingUrlPathSegment": "200_200/0/1673333565608?e=1692835200&v=beta&t=FopcXP2GaCXXnINobXKI6_XNlGJ7NF_JBVNoLLG03ZA",
+                "expiresAt": 1692835200000,
+                "height": 200
+              },
+              {
+                "width": 100,
+                "fileIdentifyingUrlPathSegment": "100_100/0/1673333565608?e=1692835200&v=beta&t=r2pak9yPZYdyjneSzN6RK2rn0obHnilyTLZy9cWkaAo",
+                "expiresAt": 1692835200000,
+                "height": 100
+              },
+              {
+                "width": 400,
+                "fileIdentifyingUrlPathSegment": "400_400/0/1673333565608?e=1692835200&v=beta&t=TUUzIaEJXK1KQZwwe70vkJhltMTWToI8m1Ng2RlJT7c",
+                "expiresAt": 1692835200000,
+                "height": 400
+              }
+            ],
+            "rootUrl": "https://media.licdn.com/dms/image/C4D0BAQHYemd2p7TxeQ/company-logo_"
+          }
+        },
+        "universalName": "hackerrank",
+        "dashCompanyUrn": "urn:li:fsd_company:435210",
+        "trackingId": "iPN8fHmdR8ugP9uit+jFDw=="
+      },
+      "displaySource": "hackerrank.com",
+      "companyUrn": "urn:li:fs_miniCompany:435210",
+      "url": "https://www.hackerrank.com/certificates/54a207dbaa63"
+    }
+  ],
+  "volunteer": [
+    {
+      "role": "Event Organizer",
+      "companyName": "PICT IEEE PISB branch",
+      "timePeriod": {
+        "endDate": {
+          "month": 9,
+          "year": 2016
+        },
+        "startDate": {
+          "month": 7,
+          "year": 2016
+        }
+      },
+      "cause": "SCIENCE_AND_TECHNOLOGY",
+      "description": "I was an Active Organiser  at PISB IEEE branch"
+    },
+    {
+      "role": "Co Head",
+      "companyName": "Impetus and Concepts",
+      "timePeriod": {
+        "endDate": {
+          "month": 3,
+          "year": 2018
+        },
+        "startDate": {
+          "month": 3,
+          "year": 2018
+        }
+      },
+      "cause": "EDUCATION",
+      "company": {
+        "miniCompany": {
+          "objectUrn": "urn:li:company:7787850",
+          "entityUrn": "urn:li:fs_miniCompany:7787850",
+          "name": "Impetus and Concepts",
+          "showcase": false,
+          "active": false,
+          "logo": {
+            "com.linkedin.common.VectorImage": {
+              "artifacts": [
+                {
+                  "width": 200,
+                  "fileIdentifyingUrlPathSegment": "200_200/0/1519881181870?e=1692835200&v=beta&t=1-Ue3oamvmqjzAtCoPK1W_S65KbxnBpZT1eruJ7mytc",
+                  "expiresAt": 1692835200000,
+                  "height": 200
+                },
+                {
+                  "width": 100,
+                  "fileIdentifyingUrlPathSegment": "100_100/0/1519881181870?e=1692835200&v=beta&t=Gsb-aArhE4o4Hd52aJHcRnHZpwR7m0AyxF91Iw_cwp8",
+                  "expiresAt": 1692835200000,
+                  "height": 100
+                },
+                {
+                  "width": 400,
+                  "fileIdentifyingUrlPathSegment": "400_400/0/1519881181870?e=1692835200&v=beta&t=KeYwSf-DUMf7CqlQfXWt2kCJGR9enfdP9WBQgcyFj08",
+                  "expiresAt": 1692835200000,
+                  "height": 400
+                }
+              ],
+              "rootUrl": "https://media.licdn.com/dms/image/C4D0BAQFoPj1eWK4hZw/company-logo_"
+            }
+          },
+          "universalName": "impetus-and-concepts",
+          "dashCompanyUrn": "urn:li:fsd_company:7787850",
+          "trackingId": "/yLC+zfxQP2w4LO/Zxxo+Q=="
+        }
+      },
+      "companyUrn": "urn:li:fs_miniCompany:7787850"
+    }
+  ],
+  "honors": [
+    {
+      "description": "Recipient of Middle School Scholarship awarded by the Government of Maharashtra.",
+      "occupation": "urn:li:fs_education:(ACoAAB72UEIBGWmnuwU_dQLmCThcwPlaI4lFJMk,689639947)",
+      "title": "Middle School Scholarship - State Rank - 121",
+      "issueDate": {
+        "month": 4,
+        "year": 2010
+      },
+      "issuer": "Government of Maharashtra"
+    },
+    {
+      "description": "Was amongst the top 100 Students of Solapur District Exam - Solapur Talent Search.",
+      "occupation": "urn:li:fs_education:(ACoAAB72UEIBGWmnuwU_dQLmCThcwPlaI4lFJMk,689639947)",
+      "title": "Recipient of Solapur Talent Search",
+      "issueDate": {
+        "month": 12,
+        "year": 2009
+      },
+      "issuer": "Government of Solapur"
+    }
+  ],
+  "projects": []
+}

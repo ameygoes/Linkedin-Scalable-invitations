@@ -1,0 +1,441 @@
+{
+  "metadata": {
+    "invitationType": "CONNECTION"
+  },
+  "elements": [
+    {
+      "entityUrn": "urn:li:fs_relSentInvitationView:urn:li:invitation:7066227554361212928",
+      "invitation": {
+        "fromMemberId": "ACoAADKEWN8BAWg9JknqgKAYpvPLHQjjAUFYdIo",
+        "invitationType": "SENT",
+        "entityUrn": "urn:li:fs_relInvitation:7066227554361212928",
+        "mailboxItemId": "urn:li:invitation:7066227554361212928",
+        "toMember": {
+          "memorialized": false,
+          "firstName": "Bhavesh",
+          "lastName": "Parakh",
+          "dashEntityUrn": "urn:li:fsd_profile:ACoAACrr1q0BIQyDwqkpUqQkr8VTI4P6JVmvCh4",
+          "occupation": "PICT '22 | Data Engineering - Bajaj Finserv",
+          "objectUrn": "urn:li:member:720098989",
+          "entityUrn": "urn:li:fs_miniProfile:ACoAACrr1q0BIQyDwqkpUqQkr8VTI4P6JVmvCh4",
+          "publicIdentifier": "bhaveshjp25",
+          "picture": {
+            "com.linkedin.common.VectorImage": {
+              "artifacts": [
+                {
+                  "width": 100,
+                  "fileIdentifyingUrlPathSegment": "100_100/0/1658923990412?e=1690416000&v=beta&t=tbRO46m1GGCLYmOILNXuTa_Q2SP4WozMU3LZW4r8msw",
+                  "expiresAt": 1690416000000,
+                  "height": 100
+                },
+                {
+                  "width": 200,
+                  "fileIdentifyingUrlPathSegment": "200_200/0/1658923990412?e=1690416000&v=beta&t=vbqyNeDmOcvMKn0T3xtGT7KjspdU_WU1vIDjHSq2Hz4",
+                  "expiresAt": 1690416000000,
+                  "height": 200
+                },
+                {
+                  "width": 400,
+                  "fileIdentifyingUrlPathSegment": "400_400/0/1658923990412?e=1690416000&v=beta&t=siS1VC03yfB8Namn0TPMgnTmzctzeGLi-HVoFEqFhCQ",
+                  "expiresAt": 1690416000000,
+                  "height": 400
+                },
+                {
+                  "width": 800,
+                  "fileIdentifyingUrlPathSegment": "800_800/0/1658923990412?e=1690416000&v=beta&t=ZH2skNi8WnFK_l_cRyXSHoS6lE4eqqql994WBL_kybY",
+                  "expiresAt": 1690416000000,
+                  "height": 800
+                }
+              ],
+              "rootUrl": "https://media.licdn.com/dms/image/C4D03AQHHPQIVpRyveg/profile-displayphoto-shrink_"
+            }
+          },
+          "trackingId": "P/EqLghZT0Ge+UCJHSC5XQ=="
+        },
+        "toMemberId": "ACoAACrr1q0BIQyDwqkpUqQkr8VTI4P6JVmvCh4",
+        "fromMember": {
+          "memorialized": false,
+          "firstName": "Amey",
+          "lastName": "Bhilegaonkar",
+          "dashEntityUrn": "urn:li:fsd_profile:ACoAADKEWN8BAWg9JknqgKAYpvPLHQjjAUFYdIo",
+          "occupation": "Video Editor",
+          "objectUrn": "urn:li:member:847534303",
+          "entityUrn": "urn:li:fs_miniProfile:ACoAADKEWN8BAWg9JknqgKAYpvPLHQjjAUFYdIo",
+          "publicIdentifier": "amey-bhilegaonkar-2a7a071b7",
+          "picture": {
+            "com.linkedin.common.VectorImage": {
+              "artifacts": [
+                {
+                  "width": 100,
+                  "fileIdentifyingUrlPathSegment": "100_100/0/1600940227409?e=1690416000&v=beta&t=1vmSoy1FoHD-fW0STjFBNdrLZxbv1jqcfjV7pL1Iv04",
+                  "expiresAt": 1690416000000,
+                  "height": 100
+                },
+                {
+                  "width": 200,
+                  "fileIdentifyingUrlPathSegment": "200_200/0/1600940227409?e=1690416000&v=beta&t=2wKRojyKM7_HnYHrKjc4uvU_1FbBOlwNCwMv7bIAwyI",
+                  "expiresAt": 1690416000000,
+                  "height": 200
+                },
+                {
+                  "width": 400,
+                  "fileIdentifyingUrlPathSegment": "400_400/0/1600940227409?e=1690416000&v=beta&t=frza2m_c6eUY7KcXe8d2GvvOItJ4Hm75ljh3B38DBMI",
+                  "expiresAt": 1690416000000,
+                  "height": 400
+                },
+                {
+                  "width": 800,
+                  "fileIdentifyingUrlPathSegment": "800_800/0/1600940227409?e=1690416000&v=beta&t=mKXt5q_jJJqwB6vZk3RyxiIR4Oj_NfPRry0Vo0pQZDw",
+                  "expiresAt": 1690416000000,
+                  "height": 800
+                }
+              ],
+              "rootUrl": "https://media.licdn.com/dms/image/C4E03AQE0-6X6hECW9A/profile-displayphoto-shrink_"
+            }
+          },
+          "trackingId": "xrvmpt9JRIq5u2si+IhgfA=="
+        },
+        "sentTime": 1684719963048,
+        "customMessage": false,
+        "sharedSecret": "dummy",
+        "invitee": {
+          "com.linkedin.voyager.relationships.invitation.ProfileInvitee": {
+            "miniProfile": {
+              "memorialized": false,
+              "firstName": "Bhavesh",
+              "lastName": "Parakh",
+              "dashEntityUrn": "urn:li:fsd_profile:ACoAACrr1q0BIQyDwqkpUqQkr8VTI4P6JVmvCh4",
+              "occupation": "PICT '22 | Data Engineering - Bajaj Finserv",
+              "objectUrn": "urn:li:member:720098989",
+              "entityUrn": "urn:li:fs_miniProfile:ACoAACrr1q0BIQyDwqkpUqQkr8VTI4P6JVmvCh4",
+              "publicIdentifier": "bhaveshjp25",
+              "picture": {
+                "com.linkedin.common.VectorImage": {
+                  "artifacts": [
+                    {
+                      "width": 100,
+                      "fileIdentifyingUrlPathSegment": "100_100/0/1658923990412?e=1690416000&v=beta&t=tbRO46m1GGCLYmOILNXuTa_Q2SP4WozMU3LZW4r8msw",
+                      "expiresAt": 1690416000000,
+                      "height": 100
+                    },
+                    {
+                      "width": 200,
+                      "fileIdentifyingUrlPathSegment": "200_200/0/1658923990412?e=1690416000&v=beta&t=vbqyNeDmOcvMKn0T3xtGT7KjspdU_WU1vIDjHSq2Hz4",
+                      "expiresAt": 1690416000000,
+                      "height": 200
+                    },
+                    {
+                      "width": 400,
+                      "fileIdentifyingUrlPathSegment": "400_400/0/1658923990412?e=1690416000&v=beta&t=siS1VC03yfB8Namn0TPMgnTmzctzeGLi-HVoFEqFhCQ",
+                      "expiresAt": 1690416000000,
+                      "height": 400
+                    },
+                    {
+                      "width": 800,
+                      "fileIdentifyingUrlPathSegment": "800_800/0/1658923990412?e=1690416000&v=beta&t=ZH2skNi8WnFK_l_cRyXSHoS6lE4eqqql994WBL_kybY",
+                      "expiresAt": 1690416000000,
+                      "height": 800
+                    }
+                  ],
+                  "rootUrl": "https://media.licdn.com/dms/image/C4D03AQHHPQIVpRyveg/profile-displayphoto-shrink_"
+                }
+              },
+              "trackingId": "P/EqLghZT0Ge+UCJHSC5XQ=="
+            }
+          }
+        }
+      }
+    },
+    {
+      "entityUrn": "urn:li:fs_relSentInvitationView:urn:li:invitation:7066227549583937536",
+      "invitation": {
+        "fromMemberId": "ACoAADKEWN8BAWg9JknqgKAYpvPLHQjjAUFYdIo",
+        "invitationType": "SENT",
+        "entityUrn": "urn:li:fs_relInvitation:7066227549583937536",
+        "mailboxItemId": "urn:li:invitation:7066227549583937536",
+        "toMember": {
+          "memorialized": false,
+          "firstName": "Shreyas",
+          "lastName": "Kallurkar",
+          "dashEntityUrn": "urn:li:fsd_profile:ACoAADV2lO8BzEqCzj--4nPXKTaMHKeog0IQTWk",
+          "occupation": "Website Developer",
+          "objectUrn": "urn:li:member:896963823",
+          "entityUrn": "urn:li:fs_miniProfile:ACoAADV2lO8BzEqCzj--4nPXKTaMHKeog0IQTWk",
+          "publicIdentifier": "shreyas-kallurkar",
+          "picture": {
+            "com.linkedin.common.VectorImage": {
+              "artifacts": [
+                {
+                  "width": 100,
+                  "fileIdentifyingUrlPathSegment": "100_100/0/1666012737481?e=1690416000&v=beta&t=jhU2cHpZErwA6ZKMnSqiCkwNu2YAyd_pqKs8DqS9ICI",
+                  "expiresAt": 1690416000000,
+                  "height": 100
+                },
+                {
+                  "width": 200,
+                  "fileIdentifyingUrlPathSegment": "200_200/0/1666012737481?e=1690416000&v=beta&t=PolXg4cP0H3381Uva5JuEK8IfWQwdyPS6KdtMuHmr2I",
+                  "expiresAt": 1690416000000,
+                  "height": 200
+                },
+                {
+                  "width": 400,
+                  "fileIdentifyingUrlPathSegment": "400_400/0/1666012737481?e=1690416000&v=beta&t=HhK2E3fr5_hLW_Fem-VZZE9VMm2EQBbDB4as22BGGFI",
+                  "expiresAt": 1690416000000,
+                  "height": 400
+                },
+                {
+                  "width": 800,
+                  "fileIdentifyingUrlPathSegment": "800_800/0/1666012737481?e=1690416000&v=beta&t=zliISnhMZ0YDHFTWhro22bgVNaahxBWWhtGa-v0e3UQ",
+                  "expiresAt": 1690416000000,
+                  "height": 800
+                }
+              ],
+              "rootUrl": "https://media.licdn.com/dms/image/D4D03AQHpgWtaefezVg/profile-displayphoto-shrink_"
+            }
+          },
+          "trackingId": "dJ4kTOd2TSmEABdTtsMEfA=="
+        },
+        "toMemberId": "ACoAADV2lO8BzEqCzj--4nPXKTaMHKeog0IQTWk",
+        "fromMember": {
+          "memorialized": false,
+          "firstName": "Amey",
+          "lastName": "Bhilegaonkar",
+          "dashEntityUrn": "urn:li:fsd_profile:ACoAADKEWN8BAWg9JknqgKAYpvPLHQjjAUFYdIo",
+          "occupation": "Video Editor",
+          "objectUrn": "urn:li:member:847534303",
+          "entityUrn": "urn:li:fs_miniProfile:ACoAADKEWN8BAWg9JknqgKAYpvPLHQjjAUFYdIo",
+          "publicIdentifier": "amey-bhilegaonkar-2a7a071b7",
+          "picture": {
+            "com.linkedin.common.VectorImage": {
+              "artifacts": [
+                {
+                  "width": 100,
+                  "fileIdentifyingUrlPathSegment": "100_100/0/1600940227409?e=1690416000&v=beta&t=1vmSoy1FoHD-fW0STjFBNdrLZxbv1jqcfjV7pL1Iv04",
+                  "expiresAt": 1690416000000,
+                  "height": 100
+                },
+                {
+                  "width": 200,
+                  "fileIdentifyingUrlPathSegment": "200_200/0/1600940227409?e=1690416000&v=beta&t=2wKRojyKM7_HnYHrKjc4uvU_1FbBOlwNCwMv7bIAwyI",
+                  "expiresAt": 1690416000000,
+                  "height": 200
+                },
+                {
+                  "width": 400,
+                  "fileIdentifyingUrlPathSegment": "400_400/0/1600940227409?e=1690416000&v=beta&t=frza2m_c6eUY7KcXe8d2GvvOItJ4Hm75ljh3B38DBMI",
+                  "expiresAt": 1690416000000,
+                  "height": 400
+                },
+                {
+                  "width": 800,
+                  "fileIdentifyingUrlPathSegment": "800_800/0/1600940227409?e=1690416000&v=beta&t=mKXt5q_jJJqwB6vZk3RyxiIR4Oj_NfPRry0Vo0pQZDw",
+                  "expiresAt": 1690416000000,
+                  "height": 800
+                }
+              ],
+              "rootUrl": "https://media.licdn.com/dms/image/C4E03AQE0-6X6hECW9A/profile-displayphoto-shrink_"
+            }
+          },
+          "trackingId": "xrvmpt9JRIq5u2si+IhgfA=="
+        },
+        "sentTime": 1684719958285,
+        "customMessage": false,
+        "sharedSecret": "dummy",
+        "invitee": {
+          "com.linkedin.voyager.relationships.invitation.ProfileInvitee": {
+            "miniProfile": {
+              "memorialized": false,
+              "firstName": "Shreyas",
+              "lastName": "Kallurkar",
+              "dashEntityUrn": "urn:li:fsd_profile:ACoAADV2lO8BzEqCzj--4nPXKTaMHKeog0IQTWk",
+              "occupation": "Website Developer",
+              "objectUrn": "urn:li:member:896963823",
+              "entityUrn": "urn:li:fs_miniProfile:ACoAADV2lO8BzEqCzj--4nPXKTaMHKeog0IQTWk",
+              "publicIdentifier": "shreyas-kallurkar",
+              "picture": {
+                "com.linkedin.common.VectorImage": {
+                  "artifacts": [
+                    {
+                      "width": 100,
+                      "fileIdentifyingUrlPathSegment": "100_100/0/1666012737481?e=1690416000&v=beta&t=jhU2cHpZErwA6ZKMnSqiCkwNu2YAyd_pqKs8DqS9ICI",
+                      "expiresAt": 1690416000000,
+                      "height": 100
+                    },
+                    {
+                      "width": 200,
+                      "fileIdentifyingUrlPathSegment": "200_200/0/1666012737481?e=1690416000&v=beta&t=PolXg4cP0H3381Uva5JuEK8IfWQwdyPS6KdtMuHmr2I",
+                      "expiresAt": 1690416000000,
+                      "height": 200
+                    },
+                    {
+                      "width": 400,
+                      "fileIdentifyingUrlPathSegment": "400_400/0/1666012737481?e=1690416000&v=beta&t=HhK2E3fr5_hLW_Fem-VZZE9VMm2EQBbDB4as22BGGFI",
+                      "expiresAt": 1690416000000,
+                      "height": 400
+                    },
+                    {
+                      "width": 800,
+                      "fileIdentifyingUrlPathSegment": "800_800/0/1666012737481?e=1690416000&v=beta&t=zliISnhMZ0YDHFTWhro22bgVNaahxBWWhtGa-v0e3UQ",
+                      "expiresAt": 1690416000000,
+                      "height": 800
+                    }
+                  ],
+                  "rootUrl": "https://media.licdn.com/dms/image/D4D03AQHpgWtaefezVg/profile-displayphoto-shrink_"
+                }
+              },
+              "trackingId": "dJ4kTOd2TSmEABdTtsMEfA=="
+            }
+          }
+        }
+      }
+    },
+    {
+      "entityUrn": "urn:li:fs_relSentInvitationView:urn:li:invitation:7066227551462952960",
+      "invitation": {
+        "fromMemberId": "ACoAADKEWN8BAWg9JknqgKAYpvPLHQjjAUFYdIo",
+        "invitationType": "SENT",
+        "entityUrn": "urn:li:fs_relInvitation:7066227551462952960",
+        "mailboxItemId": "urn:li:invitation:7066227551462952960",
+        "toMember": {
+          "memorialized": false,
+          "firstName": "Dhanashree",
+          "lastName": "Munde",
+          "dashEntityUrn": "urn:li:fsd_profile:ACoAACWFoooBQgXkFZwjH2XykmBweBlvCcrP1LU",
+          "occupation": "Software Engineer at RBL Bank, Pune",
+          "objectUrn": "urn:li:member:629514890",
+          "entityUrn": "urn:li:fs_miniProfile:ACoAACWFoooBQgXkFZwjH2XykmBweBlvCcrP1LU",
+          "publicIdentifier": "dhanashree-munde-7229a6156",
+          "picture": {
+            "com.linkedin.common.VectorImage": {
+              "artifacts": [
+                {
+                  "width": 100,
+                  "fileIdentifyingUrlPathSegment": "100_100/0/1681473712567?e=1690416000&v=beta&t=ySSyk4oeRLhBy0WLG9OKGcmPNJhLU8siE-Xj2FdKYMM",
+                  "expiresAt": 1690416000000,
+                  "height": 100
+                },
+                {
+                  "width": 200,
+                  "fileIdentifyingUrlPathSegment": "200_200/0/1681473712567?e=1690416000&v=beta&t=gsqQCeYyDAHSQDD86YJJapf4jVDDcvhNoJtY22_38ic",
+                  "expiresAt": 1690416000000,
+                  "height": 200
+                },
+                {
+                  "width": 400,
+                  "fileIdentifyingUrlPathSegment": "400_400/0/1681473712567?e=1690416000&v=beta&t=ABIjsYVbLsfi3Z1wm-0LnlIs4xPp1uIADkLEUNXrNMg",
+                  "expiresAt": 1690416000000,
+                  "height": 400
+                },
+                {
+                  "width": 800,
+                  "fileIdentifyingUrlPathSegment": "800_800/0/1681473712567?e=1690416000&v=beta&t=7tcqOZky2IKDuWnGR-F4rVvYuBN2ePS4VLSjHM9bJmU",
+                  "expiresAt": 1690416000000,
+                  "height": 800
+                }
+              ],
+              "rootUrl": "https://media.licdn.com/dms/image/D4D03AQHTwIyJsARjaw/profile-displayphoto-shrink_"
+            }
+          },
+          "trackingId": "2J11MxynRD6adKimhhPf5g=="
+        },
+        "toMemberId": "ACoAACWFoooBQgXkFZwjH2XykmBweBlvCcrP1LU",
+        "fromMember": {
+          "memorialized": false,
+          "firstName": "Amey",
+          "lastName": "Bhilegaonkar",
+          "dashEntityUrn": "urn:li:fsd_profile:ACoAADKEWN8BAWg9JknqgKAYpvPLHQjjAUFYdIo",
+          "occupation": "Video Editor",
+          "objectUrn": "urn:li:member:847534303",
+          "entityUrn": "urn:li:fs_miniProfile:ACoAADKEWN8BAWg9JknqgKAYpvPLHQjjAUFYdIo",
+          "publicIdentifier": "amey-bhilegaonkar-2a7a071b7",
+          "picture": {
+            "com.linkedin.common.VectorImage": {
+              "artifacts": [
+                {
+                  "width": 100,
+                  "fileIdentifyingUrlPathSegment": "100_100/0/1600940227409?e=1690416000&v=beta&t=1vmSoy1FoHD-fW0STjFBNdrLZxbv1jqcfjV7pL1Iv04",
+                  "expiresAt": 1690416000000,
+                  "height": 100
+                },
+                {
+                  "width": 200,
+                  "fileIdentifyingUrlPathSegment": "200_200/0/1600940227409?e=1690416000&v=beta&t=2wKRojyKM7_HnYHrKjc4uvU_1FbBOlwNCwMv7bIAwyI",
+                  "expiresAt": 1690416000000,
+                  "height": 200
+                },
+                {
+                  "width": 400,
+                  "fileIdentifyingUrlPathSegment": "400_400/0/1600940227409?e=1690416000&v=beta&t=frza2m_c6eUY7KcXe8d2GvvOItJ4Hm75ljh3B38DBMI",
+                  "expiresAt": 1690416000000,
+                  "height": 400
+                },
+                {
+                  "width": 800,
+                  "fileIdentifyingUrlPathSegment": "800_800/0/1600940227409?e=1690416000&v=beta&t=mKXt5q_jJJqwB6vZk3RyxiIR4Oj_NfPRry0Vo0pQZDw",
+                  "expiresAt": 1690416000000,
+                  "height": 800
+                }
+              ],
+              "rootUrl": "https://media.licdn.com/dms/image/C4E03AQE0-6X6hECW9A/profile-displayphoto-shrink_"
+            }
+          },
+          "trackingId": "xrvmpt9JRIq5u2si+IhgfA=="
+        },
+        "sentTime": 1684719945789,
+        "customMessage": false,
+        "sharedSecret": "dummy",
+        "invitee": {
+          "com.linkedin.voyager.relationships.invitation.ProfileInvitee": {
+            "miniProfile": {
+              "memorialized": false,
+              "firstName": "Dhanashree",
+              "lastName": "Munde",
+              "dashEntityUrn": "urn:li:fsd_profile:ACoAACWFoooBQgXkFZwjH2XykmBweBlvCcrP1LU",
+              "occupation": "Software Engineer at RBL Bank, Pune",
+              "objectUrn": "urn:li:member:629514890",
+              "entityUrn": "urn:li:fs_miniProfile:ACoAACWFoooBQgXkFZwjH2XykmBweBlvCcrP1LU",
+              "publicIdentifier": "dhanashree-munde-7229a6156",
+              "picture": {
+                "com.linkedin.common.VectorImage": {
+                  "artifacts": [
+                    {
+                      "width": 100,
+                      "fileIdentifyingUrlPathSegment": "100_100/0/1681473712567?e=1690416000&v=beta&t=ySSyk4oeRLhBy0WLG9OKGcmPNJhLU8siE-Xj2FdKYMM",
+                      "expiresAt": 1690416000000,
+                      "height": 100
+                    },
+                    {
+                      "width": 200,
+                      "fileIdentifyingUrlPathSegment": "200_200/0/1681473712567?e=1690416000&v=beta&t=gsqQCeYyDAHSQDD86YJJapf4jVDDcvhNoJtY22_38ic",
+                      "expiresAt": 1690416000000,
+                      "height": 200
+                    },
+                    {
+                      "width": 400,
+                      "fileIdentifyingUrlPathSegment": "400_400/0/1681473712567?e=1690416000&v=beta&t=ABIjsYVbLsfi3Z1wm-0LnlIs4xPp1uIADkLEUNXrNMg",
+                      "expiresAt": 1690416000000,
+                      "height": 400
+                    },
+                    {
+                      "width": 800,
+                      "fileIdentifyingUrlPathSegment": "800_800/0/1681473712567?e=1690416000&v=beta&t=7tcqOZky2IKDuWnGR-F4rVvYuBN2ePS4VLSjHM9bJmU",
+                      "expiresAt": 1690416000000,
+                      "height": 800
+                    }
+                  ],
+                  "rootUrl": "https://media.licdn.com/dms/image/D4D03AQHTwIyJsARjaw/profile-displayphoto-shrink_"
+                }
+              },
+              "trackingId": "2J11MxynRD6adKimhhPf5g=="
+            }
+          }
+        }
+      }
+    }
+  ],
+  "paging": {
+    "count": 3,
+    "start": 0,
+    "links": []
+  }
+}
