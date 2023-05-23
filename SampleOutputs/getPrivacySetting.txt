@@ -1,0 +1,13 @@
+{
+  "messagingTypingIndicators": "ALL_DISABLED",
+  "allowOpenProfile": true,
+  "profilePictureVisibilitySetting": "LINKEDIN_USER",
+  "entityUrn": "urn:li:fs_privacySettings:ACoAAB72UEIBGWmnuwU_dQLmCThcwPlaI4lFJMk",
+  "showPublicProfile": true,
+  "showPremiumSubscriberBadge": false,
+  "publicProfilePictureVisibilitySetting": "LINKEDIN_USER",
+  "formerNameVisibilitySetting": "CONNECTIONS",
+  "messagingSeenReceipts": "ALL_DISABLED",
+  "allowProfileEditBroadcasts": false,
+  "$type": "com.linkedin.voyager.identity.profile.PrivacySettings"
+}
