@@ -21,6 +21,5 @@ def readConfigurations(filepath):
     
     data = readYML(filepath)
     
-
     # Print the updated data
     return data

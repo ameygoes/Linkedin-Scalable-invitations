@@ -52,7 +52,7 @@ def send_message(invitation, api):
             message_body = accept_invite_message_body.format(
                 toFirstName = fromFirstName,
                 portFolioURL = PORTFOLIO,
-                toFirstName = invitationSentToMember
+                fromFirstName = invitationSentToMember
             ),
             recipients = [fromUser]
     )
