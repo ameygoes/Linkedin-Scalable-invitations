@@ -25,7 +25,7 @@ I would love to connect with you and learn more about your {toCompany} and the o
 
 send_invite_to_developers_for_referral_message_body = """
 Hi {tofirstName},
-I'm {fromFirstName}, proficient in {4_skills_at_max}, and I'm interested in the Data Engineer {interested_position} roles at {toCompany}.
+I'm {fromFirstName}, proficient in {max_4_skills}, and I'm interested in the {interested_position} roles at {toCompany}.
 I would be grateful if you would consider giving me a referral for this role. I'd love to discuss this with you.
 Best,
 {fromFirstName}
