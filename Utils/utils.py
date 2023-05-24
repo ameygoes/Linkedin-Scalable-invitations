@@ -1,5 +1,11 @@
 from datetime import datetime
 import yaml
+import json
+import os
+
+from Configs.envrinomentSpecificConfgis import CACHE_FILE
+from Configs.jobConfigs import FIRSTNAME, LASTNAME
+
 
 def getCurrentTime():
     return datetime.now()
@@ -17,9 +23,56 @@ def readYML(filepath):
         data = yaml.safe_load(f)
     return data
 
-def readConfigurations(filepath):
-    
+def readConfigurations(filepath):   
     data = readYML(filepath)
-    
     # Print the updated data
     return data
+
+def writeJSONfile(filepath, data):
+    # Write the JSON object to a file.
+    with open(filepath, "w") as f:
+        json.dump(data, f, indent=4)
+
+def readJSONfile(filepath):
+    with open(filepath, "r") as f:
+        data = json.load(f)
+    return data
+
+def get_id_from_urn(urn):
+    return urn.split(":")[3]
+
+
+def cache_public_profile_id(api, public_profile_id):
+    """
+    Caches the public profile id of the logged in user.
+    """
+
+    # Check if the file exists.
+    if os.path.isfile(CACHE_FILE):
+
+        # Get the size of the file.
+        file_size = os.path.getsize(CACHE_FILE)
+
+        # Check if the file is empty.
+        if file_size == 0:
+            # Write the profile to the file.
+            writeJSONfile(CACHE_FILE, api.get_profile(public_id=public_profile_id))
+
+        # Read the profile from the file.
+        cache_profile = readJSONfile(CACHE_FILE)
+
+        # Check if the profile is up-to-date.
+        if cache_profile["firstName"] == FIRSTNAME and cache_profile["lastName"] == LASTNAME:
+            return cache_profile
+
+        # The profile is not up-to-date, so write the new profile to the file.
+        writeJSONfile(CACHE_FILE, api.get_profile(public_id=public_profile_id))
+
+        return readJSONfile(CACHE_FILE)
+
+    # The file does not exist, so write the profile to the file.
+    writeJSONfile(CACHE_FILE, api.get_profile(public_id=public_profile_id))
+
+    return readJSONfile(CACHE_FILE)
+
+    
