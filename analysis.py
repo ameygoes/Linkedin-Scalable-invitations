@@ -10,17 +10,21 @@ linkedin = Linkedin(credentials["username"], credentials["password"])
 
 profile_id = "ACoAABQ11fIBQLGQbB1V1XPBZJsRwfK5r1U2Rzw"
 
-profile = linkedin.get_profile(profile_id)
+results = linkedin.search_people(schools=["17769"],keyword_title=["Data Engineer"],regions=["103644278"])
 
-print(json.dumps(profile))
+print(json.dumps(results,indent=2))
 
-connections = linkedin.get_profile_connections(profile["profile_id"])
+# profile = linkedin.get_profile(profile_id)
 
-print(json.dumps(connections))
+# print(json.dumps(profile))
 
-connection_public_id = ""
-message_str = "Hi, I would like to connect."
+# connections = linkedin.get_profile_connections(profile["profile_id"])
 
-status = linkedin.add_connection(connection_public_id, message_str)
+# print(json.dumps(connections))
 
-print(status)
+# connection_public_id = ""
+# message_str = "Hi, I would like to connect."
+
+# status = linkedin.add_connection(connection_public_id, message_str)
+
+# print(status)
