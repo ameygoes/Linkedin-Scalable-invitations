@@ -972,23 +972,6 @@ class Linkedin(object):
             self.logger.debug("Must provide [conversation_urn_id] or [recipients].")
             return True
 
-        # message_event = {
-        #     "eventCreate": {
-        #         "originToken": str(uuid.uuid4()),
-        #         "value": {
-        #             "com.linkedin.voyager.messaging.create.MessageCreate": {
-        #                 "attributedBody": {
-        #                     "text": message_body,
-        #                     "attributes": [],
-        #                 },
-        #                 "attachments": [],
-        #             }
-        #         },
-        #         "trackingId": generate_trackingId_as_charString(),
-        #     },
-        #     "dedupeByClientGeneratedToken": False,
-        # }
-        print(generate_trackingId_as_charString())
         message_event = {
             "message": {
                 "body": {
@@ -1002,8 +985,7 @@ class Linkedin(object):
             "mailboxUrn": mailBoxURN,
             "dedupeByClientGeneratedToken": False
         }
-
-        # https://www.linkedin.com/voyager/api/voyagerMessagingDashComposeViewContexts?q=recipients&recipients=List(urn:li:fsd_profile:ACoAACNu6roB0lCYM9Pn2jum-IKVEIiyJKWpuZA)&type=CONNECTION_MESSAGE
+        
         if conversation_urn_id and not recipients:
             res = self._post(
                 f"/messaging/conversations/{conversation_urn_id}/events",
@@ -1011,14 +993,18 @@ class Linkedin(object):
                 data=json.dumps(message_event),
             )
         elif recipients and not conversation_urn_id:
+            print(recipients)
             message_event["hostRecipientUrns"] = recipients
+            print(message_event)
             payload = message_event
+           
             res = self._post(
                 f"/voyagerMessagingDashMessengerMessages",
                 params=params,
                 data=json.dumps(payload),
             )
 
+        print(res.json())
         return res.status_code != 201
 
     def mark_conversation_as_seen(self, conversation_urn_id):

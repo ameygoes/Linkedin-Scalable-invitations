@@ -1,5 +1,16 @@
 from Configs.envrinomentSpecificConfgis import CONFIGURATION_FILE
-from Utils.utils import readConfigurations
+import yaml
+
+def readYML(filepath):
+    # Load the YAML file
+    with open(filepath, "r") as f:
+        data = yaml.safe_load(f)
+    return data
+
+def readConfigurations(filepath):   
+    data = readYML(filepath)
+    # Print the updated data
+    return data
 
 # READS THE CONFIGURATION FILE
 configs = readConfigurations(CONFIGURATION_FILE)
@@ -11,5 +22,5 @@ LASTNAME = configs['last_name']
 
 
 # INVITAION CONFIGURATION
-LIMIT = configs['limit']
+INVITATION_LIMIT = configs['invitation_limit']
 PORTFOLIO = configs['portfolio']

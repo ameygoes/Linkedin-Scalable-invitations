@@ -1,0 +1,192 @@
+{
+    "summary": "I am a YouTuber, Travel Vlogger with combo of Content writing skills, Video and photo editing, social Media Marketing.",
+    "industryName": "Entertainment",
+    "lastName": "Bhilegaonkar",
+    "locationName": "India",
+    "student": false,
+    "geoCountryName": "India",
+    "geoCountryUrn": "urn:li:fs_geo:102713980",
+    "geoLocationBackfilled": false,
+    "elt": false,
+    "profilePictureOriginalImage": {
+        "com.linkedin.common.VectorImage": {
+            "artifacts": [
+                {
+                    "width": 600,
+                    "fileIdentifyingUrlPathSegment": "900_1200/0/1600940228236?m=AQLBqBGO1IT8tQAAAYhMyhNC1ALtiFWrWYw6UHFoKaCkPAfKKZPHyKVSmw&e=1685001891&v=beta&t=No36uAjz5pekjmV1VeAW0hGubPfPd36Iw88F7Pg9s40",
+                    "expiresAt": 1685001891000,
+                    "height": 900
+                },
+                {
+                    "width": 300,
+                    "fileIdentifyingUrlPathSegment": "450_600/0/1600940228236?m=AQK5uWuBZwgLGAAAAYhMyhNCSB4ruzrtVYczzA6SJs4FXRksbreWU_aVzQ&e=1685001891&v=beta&t=CrDAwZ72G7DHSZC8r_UWAe1xeRUckbeiBtzMV3T8GiY",
+                    "expiresAt": 1685001891000,
+                    "height": 450
+                }
+            ],
+            "rootUrl": "https://www.linkedin.com/dms/C4E04AQFXJI3PG_N9Ng/profile-originalphoto-shrink_"
+        }
+    },
+    "industryUrn": "urn:li:fs_industry:28",
+    "firstName": "Amey",
+    "profilePicture": {
+        "displayImage": "urn:li:digitalmediaAsset:C4E03AQE0-6X6hECW9A",
+        "originalImage": "urn:li:digitalmediaAsset:C4E04AQFXJI3PG_N9Ng",
+        "photoFilterEditInfo": {
+            "bottomLeft": {
+                "x": 0.13618995249271393,
+                "y": 0.9072278738021851
+            },
+            "saturation": 0.0,
+            "brightness": 0.0,
+            "vignette": 0.0,
+            "photoFilterType": "ORIGINAL",
+            "bottomRight": {
+                "x": 0.951360285282135,
+                "y": 0.9072277545928955
+            },
+            "topLeft": {
+                "x": 0.1361900269985199,
+                "y": 0.36378014087677
+            },
+            "contrast": 0.0,
+            "topRight": {
+                "x": 0.9513603448867798,
+                "y": 0.36378008127212524
+            }
+        }
+    },
+    "entityUrn": "urn:li:fs_profile:ACoAADKEWN8BAWg9JknqgKAYpvPLHQjjAUFYdIo",
+    "geoLocation": {
+        "geoUrn": "urn:li:fs_geo:102005308"
+    },
+    "geoLocationName": "Pune, Maharashtra",
+    "location": {
+        "basicLocation": {
+            "countryCode": "in"
+        }
+    },
+    "headline": "Video Editor",
+    "displayPictureUrl": "https://media.licdn.com/dms/image/C4E03AQE0-6X6hECW9A/profile-displayphoto-shrink_",
+    "img_100_100": "100_100/0/1600940227409?e=1690416000&v=beta&t=1vmSoy1FoHD-fW0STjFBNdrLZxbv1jqcfjV7pL1Iv04",
+    "img_200_200": "200_200/0/1600940227409?e=1690416000&v=beta&t=2wKRojyKM7_HnYHrKjc4uvU_1FbBOlwNCwMv7bIAwyI",
+    "img_400_400": "400_400/0/1600940227409?e=1690416000&v=beta&t=frza2m_c6eUY7KcXe8d2GvvOItJ4Hm75ljh3B38DBMI",
+    "img_800_800": "800_800/0/1600940227409?e=1690416000&v=beta&t=mKXt5q_jJJqwB6vZk3RyxiIR4Oj_NfPRry0Vo0pQZDw",
+    "profile_id": "ACoAADKEWN8BAWg9JknqgKAYpvPLHQjjAUFYdIo",
+    "profile_urn": "urn:li:fs_miniProfile:ACoAADKEWN8BAWg9JknqgKAYpvPLHQjjAUFYdIo",
+    "member_urn": "urn:li:member:847534303",
+    "public_id": "amey-bhilegaonkar-2a7a071b7",
+    "experience": [
+        {
+            "entityUrn": "urn:li:fs_position:(ACoAADKEWN8BAWg9JknqgKAYpvPLHQjjAUFYdIo,1676347191)",
+            "$anti_abuse_metadata": {
+                "/geoUrn": {
+                    "sourceUrns": {
+                        "com.linkedin.common.urn.MemberUrn": "urn:li:member:847534303"
+                    }
+                },
+                "/companyName": {
+                    "sourceUrns": {
+                        "com.linkedin.common.urn.MemberUrn": "urn:li:member:847534303"
+                    }
+                },
+                "/companyUrn": {
+                    "sourceUrns": {
+                        "com.linkedin.common.urn.MemberUrn": "urn:li:member:847534303"
+                    }
+                },
+                "/entityUrn": {
+                    "sourceUrns": {
+                        "com.linkedin.common.urn.MemberUrn": "urn:li:member:847534303"
+                    }
+                },
+                "/geoLocationName": {
+                    "sourceUrns": {
+                        "com.linkedin.common.urn.MemberUrn": "urn:li:member:847534303"
+                    }
+                },
+                "/promotion": {
+                    "sourceUrns": {
+                        "com.linkedin.common.urn.MemberUrn": "urn:li:member:847534303"
+                    }
+                },
+                "/title": {
+                    "sourceUrns": {
+                        "com.linkedin.common.urn.MemberUrn": "urn:li:member:847534303"
+                    }
+                },
+                "/region": {
+                    "sourceUrns": {
+                        "com.linkedin.common.urn.MemberUrn": "urn:li:member:847534303"
+                    }
+                },
+                "/locationName": {
+                    "sourceUrns": {
+                        "com.linkedin.common.urn.MemberUrn": "urn:li:member:847534303"
+                    }
+                },
+                "/description": {
+                    "sourceUrns": {
+                        "com.linkedin.common.urn.MemberUrn": "urn:li:member:847534303"
+                    }
+                }
+            },
+            "companyName": "Self-employed",
+            "timePeriod": {
+                "startDate": {
+                    "month": 6,
+                    "year": 2015
+                }
+            },
+            "title": "Video Editor"
+        }
+    ],
+    "education": [
+        {
+            "entityUrn": "urn:li:fs_education:(ACoAADKEWN8BAWg9JknqgKAYpvPLHQjjAUFYdIo,680375440)",
+            "school": {
+                "objectUrn": "urn:li:school:20970",
+                "entityUrn": "urn:li:fs_miniSchool:20970",
+                "active": true,
+                "schoolName": "Pune Institute of Computer Technology",
+                "trackingId": "CBPra44FSZuP7a8Jm9NN5w==",
+                "logoUrl": "https://media.licdn.com/dms/image/C560BAQFMx5qjAC9X-w/company-logo_"
+            },
+            "timePeriod": {
+                "endDate": {
+                    "year": 2019
+                },
+                "startDate": {
+                    "year": 2015
+                }
+            },
+            "description": "Completed my B.E.",
+            "degreeName": "Bachelor of Engineering - BE",
+            "schoolName": "Pune Institute of Computer Technology",
+            "fieldOfStudy": "Electronics and Telecommunication",
+            "degreeUrn": "urn:li:fs_degree:269",
+            "schoolUrn": "urn:li:fs_miniSchool:20970"
+        },
+        {
+            "entityUrn": "urn:li:fs_education:(ACoAADKEWN8BAWg9JknqgKAYpvPLHQjjAUFYdIo,680378013)",
+            "timePeriod": {
+                "endDate": {
+                    "year": 2015
+                },
+                "startDate": {
+                    "year": 2013
+                }
+            },
+            "description": "I completed my 10+2 education at S.P. college Pune\n",
+            "degreeName": "H.S.C.",
+            "schoolName": "S.P. College, Pune",
+            "fieldOfStudy": "Science"
+        }
+    ],
+    "languages": [],
+    "publications": [],
+    "certifications": [],
+    "volunteer": [],
+    "honors": [],
+    "projects": []
+}

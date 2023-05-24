@@ -1,8 +1,8 @@
 # CACHE DETAILS FOR FETCHING OWN PROFILE
-public_identifier: "amey-bhilegaonkar"
+public_identifier: "amey-bhilegaonkar-2a7a071b7"
 first_name: "Amey"
 last_name: "Bhilegaonkar"
 
 # Invitation job params
-limit: 15
+invitation_limit: 1
 portfolio: "https://ameyportfolio.netlify.app/"

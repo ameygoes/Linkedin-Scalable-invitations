@@ -1,7 +1,9 @@
+from Entity.profile import Profile
+from Utils.utils import cache_public_profile_id
 from login import Login
 from Configs.messageConfigs import accept_invite_message_body
 from Configs.jobConfigs import *
-from datetime import datetime 
+from Entity.urnPrefixes import Prefix
 
 """
 # def rejectInvitation(invitation, api, invitationEntityURN, sharedSecret, entity, action):
@@ -18,43 +20,40 @@ from datetime import datetime
 # ACCEPT INVITATION
 def acceptInvitation(invitation, api):
     # FETCH DATA
-    # INVITATOIN SENDER DETAILS
-    fromMember = invitation['fromMember']
-    fromFirstName = fromMember['firstName']
-    fromLastName = fromMember['lastName']
-
-    # INVITATOIN RECEIVER DETAILS
-    sharedSecret = invitation['sharedSecret']
-    invitationEntityURN = invitation['entityUrn']
+    invitationProfile = Profile()
+    invitationProfile.parseInvitationJSON(invitation)
     
     print("================================================================")
-    print(f"Processing invitation from user: {fromFirstName} {fromLastName} ... ⌛️")
+    print(f"Processing invitation from user: {invitationProfile.profile_firstName} {invitationProfile.profile_lastName} ... ⌛️")
     
+    prefix = Prefix()
     # ACCEPT OR REJECT INVITATION
-    return api.reply_invitation(invitation_entity_urn = invitationEntityURN,
-                                invitation_shared_secret = sharedSecret
+    return api.reply_invitation(invitation_entity_urn = prefix.get_dashedInvitationUrn(invitationProfile.invitation_entity_urn),
+                                invitation_shared_secret = invitationProfile.invitation_shared_secret
                                 )
 
 # SENDS MESSAGE
 def send_message(invitation, api):
 
-    # PARSE DATA
-    fromMember = invitation['fromMember']
-    fromFirstName = fromMember['firstName']
-    fromLastName = fromMember['lastName']
-    fromUser = fromMember['dashEntityUrn']
-    invitationSentToMember = invitation['toMember']['firstName']
-    toMailBoxURN = invitation['toMember']['dashEntityUrn']
-
-    print(f"Sending First Message to user: {fromFirstName} {fromLastName} 💬")
+    # PARSE INVITATION DATA
+    invitation_sent_by_Profile = Profile()
+    invitation_sent_by_Profile.parseInvitationJSON(invitation)
+    
+    # PARSE CACHE DATA
+    invitation_sent_to_profile = Profile()
+    cachedProfile = cache_public_profile_id(api)
+    invitation_sent_to_profile.parseProfileJSON(cachedProfile)
+    
+    prefix = Prefix()
+    print(f"Sending First Message to user: {invitation_sent_by_Profile.profile_firstName} {invitation_sent_by_Profile.profile_lastName} 💬")
     return api.send_message(
-            mailBoxURN = toMailBoxURN,
+            mailBoxURN = prefix.fsd_profile(invitation_sent_to_profile.profile_urn_id),
             message_body = accept_invite_message_body.format(
-                toFirstName = fromFirstName,
+                toFirstName = invitation_sent_by_Profile.profile_firstName,
                 portFolioURL = PORTFOLIO,
-                fromFirstName = invitationSentToMember
+                fromFirstName = invitation_sent_to_profile.profile_firstName
             ),
-            recipients = [fromUser]
+            recipients = [prefix.fsd_profile(invitation_sent_by_Profile.profile_urn_id)]
     )
 
       
@@ -63,7 +62,7 @@ def main():
     api = Login()
 
     # GET INVITATIONS
-    invitations_recevied = api.get_invitations(limit=LIMIT)
+    invitations_recevied = api.get_invitations(limit=INVITATION_LIMIT)
 
     
     if len(invitations_recevied) == 0:
@@ -83,7 +82,7 @@ def main():
             # FOR HANDELING INVITATIONS FROM PEOPLE
             else:
                 response = acceptInvitation(invitation, api)
-                    
+                 
                 if response:
 
                     print("Invitation accepted ✅")

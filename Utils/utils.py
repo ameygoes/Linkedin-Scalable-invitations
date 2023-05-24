@@ -1,10 +1,9 @@
 from datetime import datetime
-import yaml
 import json
 import os
 
 from Configs.envrinomentSpecificConfgis import CACHE_FILE
-from Configs.jobConfigs import FIRSTNAME, LASTNAME
+from Configs.jobConfigs import FIRSTNAME, LASTNAME, PUBLIC_PROFILE_ID
 
 
 def getCurrentTime():
@@ -15,18 +14,6 @@ def getTotalTime(totalSeconds):
     minutes = int((totalSeconds % 3600) // 60)
     seconds = int(totalSeconds % 60)
     return hours, minutes, seconds
-
-
-def readYML(filepath):
-    # Load the YAML file
-    with open(filepath, "r") as f:
-        data = yaml.safe_load(f)
-    return data
-
-def readConfigurations(filepath):   
-    data = readYML(filepath)
-    # Print the updated data
-    return data
 
 def writeJSONfile(filepath, data):
     # Write the JSON object to a file.
@@ -42,7 +29,7 @@ def get_id_from_urn(urn):
     return urn.split(":")[3]
 
 
-def cache_public_profile_id(api, public_profile_id):
+def cache_public_profile_id(api):
     """
     Caches the public profile id of the logged in user.
     """
@@ -56,7 +43,7 @@ def cache_public_profile_id(api, public_profile_id):
         # Check if the file is empty.
         if file_size == 0:
             # Write the profile to the file.
-            writeJSONfile(CACHE_FILE, api.get_profile(public_id=public_profile_id))
+            writeJSONfile(CACHE_FILE, api.get_profile(public_id=PUBLIC_PROFILE_ID))
 
         # Read the profile from the file.
         cache_profile = readJSONfile(CACHE_FILE)
@@ -66,12 +53,12 @@ def cache_public_profile_id(api, public_profile_id):
             return cache_profile
 
         # The profile is not up-to-date, so write the new profile to the file.
-        writeJSONfile(CACHE_FILE, api.get_profile(public_id=public_profile_id))
+        writeJSONfile(CACHE_FILE, api.get_profile(public_id=PUBLIC_PROFILE_ID))
 
         return readJSONfile(CACHE_FILE)
 
     # The file does not exist, so write the profile to the file.
-    writeJSONfile(CACHE_FILE, api.get_profile(public_id=public_profile_id))
+    writeJSONfile(CACHE_FILE, api.get_profile(public_id=PUBLIC_PROFILE_ID))
 
     return readJSONfile(CACHE_FILE)
 

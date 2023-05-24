@@ -1,4 +1,3 @@
-from Entity.urnPrefixes import Prefix
 from Utils.utils import get_id_from_urn
 
 
@@ -42,28 +41,28 @@ class Profile:
 
         if len(profile_json['experience']):
             self.profile_latest_company = profile_json['experience'][0]['companyName']
-            self.profile_latest_company_urn = get_id_from_urn(profile_json['experience'][0]['companyUrn'])
+            if len(profile_json['experience'][0]['companyUrn']):
+                self.profile_latest_company_urn = get_id_from_urn(profile_json['experience'][0]['companyUrn'])
 
     # GET ADDITIONAL DETAILS
-        self.profile_member_urn = profile_json['memberUrn']
+        self.profile_member_urn = profile_json['member_urn']
         self.profile_industry_name = profile_json['industryName']
         self.profile_industry_urn = profile_json['industryUrn']
 
         if len(profile_json['education']):
-            self.profile_school_urn_id = get_id_from_urn(profile_json['education'][0]['school'][0]['objectUrn'])
+            self.profile_school_urn_id = get_id_from_urn(profile_json['education'][0]['school']['objectUrn'])
 
     def parseInvitationJSON(self, invitation_json):
-        prefixes = Prefix()
 
         # SENDER DETAILS
-        self.profile_urn_id = prefixes.get_dashedProfileEntityUrn(get_id_from_urn(invitation_json['fromMember']['dashEntityUrn']))
+        self.profile_urn_id = get_id_from_urn(invitation_json['fromMember']['dashEntityUrn'])
         self.profile_firstName = invitation_json['fromMember']['firstName']
         self.profile_lastName = invitation_json['fromMember']['lastName']
         
 
         # INVITATION DETAILS
         self.invitation_shared_secret = invitation_json['sharedSecret']
-        self.invitation_entity_urn = prefixes.get_dashedInvitationUrn(get_id_from_urn(invitation_json['entityUrn']))
+        self.invitation_entity_urn = get_id_from_urn(invitation_json['entityUrn'])
 
 
 
