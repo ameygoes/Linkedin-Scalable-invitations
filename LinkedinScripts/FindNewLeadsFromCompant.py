@@ -8,6 +8,7 @@
 # This script collects all *COMPANY WISE* profiles listed in linkedin
 # It collects profile details along with their email addresses
 
+import json
 import requests
 import re
 import csv
@@ -16,8 +17,8 @@ from urllib.parse import quote
 
 
 # Script Configuration
-linkedin_email = os.environ.get("LINKED_IN_UN") # place your linkedin login email
-linkedin_password = os.environ.get("LINKED_IN_PASS") # place your linkedin login password
+linkedin_email = os.environ.get("LINKED_IN_UN_2") # place your linkedin login email
+linkedin_password = os.environ.get("LINKED_IN_PASS_2") # place your linkedin login password
 target_company_link = "https://www.linkedin.com/company/barclays-bank/" # place company URL in mentioned format only! do not remove trailing slash
 # End Script Configuration
 
@@ -102,7 +103,6 @@ class LinkedIn:
 
 
     def listProfiles(self, company_id, page_no, need_count=False):
-        resp = self.s.get('https://www.linkedin.com/search/results/people/?facetCurrentCompany=%5B%22{}%22%5D&origin=COMPANY_PAGE_CANNED_SEARCH&page={}'.format(company_id, page_no), headers=self.headers).text
         token = self.s.cookies.get_dict().get('JSESSIONID').replace('"','')
         headers = {
             'accept': 'application/vnd.linkedin.normalized+json+2.1',
@@ -116,6 +116,7 @@ class LinkedIn:
             'x-restli-protocol-version': '2.0.0'
         }
         resp = self.s.get('https://www.linkedin.com/voyager/api/search/blended?count=10&filters=List(currentCompany-%3E{},resultType-%3EPEOPLE)&origin=COMPANY_PAGE_CANNED_SEARCH&q=all&queryContext=List(spellCorrectionEnabled-%3Etrue)&start={}'.format(company_id,(int(page_no)-1) * 10), headers=headers).json()
+        print(json.dumps(resp, indent=4, sort_keys=True))
         profiles = resp.get('data').get('elements')[0].get('elements')
         all_profile_links = []
         if need_count:
@@ -147,7 +148,7 @@ class LinkedIn:
         except:
             print("Wrong Company URL. Company Format should be https://www.linkedin.com/company/company_Username/!")
             return None
-        resp = self.s.get(company_link, headers=self.headers).text
+       
         token = self.s.cookies.get_dict().get('JSESSIONID').replace('"','')
         headers = {
             'csrf-token': token,
@@ -156,7 +157,6 @@ class LinkedIn:
         }
         api_link = 'https://www.linkedin.com/voyager/api/organization/companies?decorationId=com.linkedin.voyager.deco.organization.web.WebCompanyStockQuote-2&q=universalName&universalName={}'.format(quote(company_username))
         resp = self.s.get(api_link, headers=headers).json()
-        print(resp)
         company_id = resp.get('elements')[0].get('entityUrn').split(':')[-1]
         return company_id
 
@@ -171,12 +171,14 @@ if __name__ == "__main__":
         if company_id is not None:
             print("Collecting all company member profiles upto 10000!")
             profile_list, page_count = connection.listProfiles(company_id, 1, True)
-            for page_no in range(2,page_count+1):
-                profile_list.extend(connection.listProfiles(company_id, page_no))
-            print("Profile list collected and saved! Extracting emails ...")
-            all_emails = connection.bulkScan(profile_list)
-            for email in all_emails:
-                print(email)
-                connection.saveEmail(email)
+            print("=============================== COMPANY list profile response ===============================")
+            print(profile_list, page_count)
+            # for page_no in range(2,page_count+1):
+            #     profile_list.extend(connection.listProfiles(company_id, page_no))
+            # print("Profile list collected and saved! Extracting emails ...")
+            # all_emails = connection.bulkScan(profile_list)
+            # for email in all_emails:
+            #     print(email)
+            #     connection.saveEmail(email)
     else:
         print("Unable to login to LinkedIn!")
