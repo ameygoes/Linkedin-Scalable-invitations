@@ -41,7 +41,7 @@ class Profile:
 
         if len(profile_json['experience']):
             self.profile_latest_company = profile_json['experience'][0]['companyName']
-            if len(profile_json['experience'][0]['companyUrn']):
+            if not self.profile_latest_company == "Self-employed":
                 self.profile_latest_company_urn = get_id_from_urn(profile_json['experience'][0]['companyUrn'])
 
     # GET ADDITIONAL DETAILS

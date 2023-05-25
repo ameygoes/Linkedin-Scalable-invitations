@@ -24,7 +24,7 @@ def acceptInvitation(invitation, api):
     invitationProfile.parseInvitationJSON(invitation)
     
     print("================================================================")
-    print(f"Processing invitation from user: {invitationProfile.profile_firstName} {invitationProfile.profile_lastName} ... ⌛️")
+    print(f"Processing invitation from user: {invitationProfile.profile_firstName} {invitationProfile.profile_lastName} ...")
     
     prefix = Prefix()
     # ACCEPT OR REJECT INVITATION
@@ -82,7 +82,7 @@ def main():
             # FOR HANDELING INVITATIONS FROM PEOPLE
             else:
                 response = acceptInvitation(invitation, api)
-                 
+                # response = True
                 if response:
 
                     print("Invitation accepted ✅")

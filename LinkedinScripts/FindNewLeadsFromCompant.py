@@ -116,27 +116,23 @@ class LinkedIn:
             'x-restli-protocol-version': '2.0.0'
         }
         resp = self.s.get('https://www.linkedin.com/voyager/api/search/blended?count=10&filters=List(currentCompany-%3E{},resultType-%3EPEOPLE)&origin=COMPANY_PAGE_CANNED_SEARCH&q=all&queryContext=List(spellCorrectionEnabled-%3Etrue)&start={}'.format(company_id,(int(page_no)-1) * 10), headers=headers).json()
-        print(json.dumps(resp, indent=4, sort_keys=True))
+        
         profiles = resp.get('data').get('elements')[0].get('elements')
+
         all_profile_links = []
         if need_count:
             page_count = resp.get('data').get('paging').get('total')
         for profile in profiles:
-            print(f"================= \n Printing Profile: \n {profile}")
             person_name = profile.get('title').get('text')
             profile_link = profile.get('navigationUrl')
             headline = profile.get('headline').get('text')
             country = profile.get('subline').get('text')
-            print("Profile Link: {}".format(profile_link))
-            print("Full Name: {}".format(person_name))
-            print("Headline: {}".format(headline))
-            print("Country: {}".format(country))
             data = []
             data.append(profile_link)
             data.append(person_name)
             data.append(headline)
             data.append(country)
-            # self.saveRecord(data)
+            self.saveRecord(data)
         if need_count:
             return all_profile_links, page_count
         else:
@@ -173,8 +169,8 @@ if __name__ == "__main__":
             profile_list, page_count = connection.listProfiles(company_id, 1, True)
             print("=============================== COMPANY list profile response ===============================")
             print(profile_list, page_count)
-            # for page_no in range(2,page_count+1):
-            #     profile_list.extend(connection.listProfiles(company_id, page_no))
+            for page_no in range(2,page_count+1):
+                profile_list.extend(connection.listProfiles(company_id, page_no))
             # print("Profile list collected and saved! Extracting emails ...")
             # all_emails = connection.bulkScan(profile_list)
             # for email in all_emails:

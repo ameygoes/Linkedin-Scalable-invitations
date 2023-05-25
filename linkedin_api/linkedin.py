@@ -993,9 +993,7 @@ class Linkedin(object):
                 data=json.dumps(message_event),
             )
         elif recipients and not conversation_urn_id:
-            print(recipients)
             message_event["hostRecipientUrns"] = recipients
-            print(message_event)
             payload = message_event
            
             res = self._post(
@@ -1003,9 +1001,8 @@ class Linkedin(object):
                 params=params,
                 data=json.dumps(payload),
             )
-
-        print(res.json())
-        return res.status_code != 201
+        print(res.status_code)
+        return res.status_code >= 200 and res.status_code < 300
 
     def mark_conversation_as_seen(self, conversation_urn_id):
         """Send 'seen' to a given conversation.
