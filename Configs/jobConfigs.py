@@ -24,3 +24,6 @@ LASTNAME = configs['last_name']
 # INVITAION CONFIGURATION
 INVITATION_LIMIT = configs['invitation_limit']
 PORTFOLIO = configs['portfolio']
+
+# GSUTILITY CONFIGURATION
+ENCRYPTED_EMAIL = configs['encrypted_email']

@@ -276,8 +276,11 @@ class Linkedin(object):
         keyword_company=None,
         keyword_school=None,
         network_depth=None,  # DEPRECATED - use network_depths
-        title=None,  # DEPRECATED - use keyword_title
+        title=None, # DEPRECATED - use keyword_title
+        limit=100, 
+        offset=0, 
         **kwargs,
+        
     ):
         """Perform a LinkedIn search for people.
 
@@ -362,10 +365,10 @@ class Linkedin(object):
         if keywords:
             params["keywords"] = keywords
 
-        data = self.search(params, **kwargs)
-
+        data = self.search( params,limit=limit, **kwargs)
         results = []
         for item in data:
+            # print(json.dumps(item,indent=2))
             if not include_private_profiles and "publicIdentifier" not in item:
                 continue
             results.append(
@@ -382,7 +385,7 @@ class Linkedin(object):
 
         return results
 
-    def search_companies(self, keywords=None, **kwargs):
+    def search_companies(self, limit=50, keywords=None, **kwargs):
         """Perform a LinkedIn search for companies.
 
         :param keywords: A list of search keywords (str)
@@ -401,9 +404,11 @@ class Linkedin(object):
         if keywords:
             params["keywords"] = keywords
 
-        data = self.search(params, **kwargs)
+        data = self.search(params, limit=limit, **kwargs)
 
         results = []
+
+        print("Searching Companies...")
         for item in data:
             if item.get("type") != "COMPANY":
                 continue
@@ -520,13 +525,12 @@ class Linkedin(object):
             data = res.json()
 
             elements = data.get("included", [])
-            results.extend(
-                [
-                    i
-                    for i in elements
-                    if i["$type"] == "com.linkedin.voyager.jobs.JobPosting"
-                ]
-            )
+
+            for i in elements:
+                if i["$type"] == "com.linkedin.voyager.jobs.JobPosting":
+                    i["jobLink"] = "https://www.linkedin.com/jobs/view/" + get_id_from_urn(i["dashEntityUrn"])
+                    results.append(i)
+    
             # break the loop if we're done searching
             # NOTE: we could also check for the `total` returned in the response.
             # This is in data["data"]["paging"]["total"]
