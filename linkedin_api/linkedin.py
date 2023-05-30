@@ -365,7 +365,7 @@ class Linkedin(object):
         if keywords:
             params["keywords"] = keywords
 
-        data = self.search( params,limit=limit, **kwargs)
+        data = self.search( params, limit=limit, offset=offset, **kwargs)
         results = []
         for item in data:
             # print(json.dumps(item,indent=2))

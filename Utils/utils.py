@@ -2,11 +2,15 @@ from datetime import datetime
 import json
 import os
 import pandas as pd
-from Configs.envrinomentSpecificConfgis import CACHE_FILE
+from Configs.envrinomentSpecificConfgis import CACHE_FILE, SCHEDULING_CONFIGS
 from Configs.jobConfigs import FIRSTNAME, LASTNAME, PUBLIC_PROFILE_ID
 from fuzzywuzzy import fuzz
 
-
+# CATEGORIES FOR DECIDING
+categories = [
+    "HR",
+    "DATA"
+]
 def getCurrentTime():
     return datetime.now()
 
@@ -126,5 +130,36 @@ def get_common_rows(df1, df2):
     return common_rows
 
 def get_uncommon_rows(df1, df2):
+
     not_common_rows = df2[~df2['profile_urn_id'].isin(df1['profile_urn_id'])]
     return not_common_rows
+
+def update_schedulers_config(property_name, value):
+    data = readJSONfile(SCHEDULING_CONFIGS)
+    data[property_name] = value
+    writeJSONfile(SCHEDULING_CONFIGS, data)
+
+def get_scheduler_config(property_name):
+    data = readJSONfile(SCHEDULING_CONFIGS)
+    return data[property_name]
+
+def get_overall_category(search_list):
+    max_score = -1
+    overall_category = None
+
+    for category in categories:
+        score = max(fuzz.partial_ratio(search_term.lower(), category.lower()) for search_term in search_list)
+        if score > max_score:
+            max_score = score
+            overall_category = category
+
+    return overall_category
+
+def get_offset_count(counts, category):
+    hr_count = counts.get('HR', 0)
+    dev_count = counts.get('DATA', 0)
+
+    if category == 'HR':
+        return hr_count + 1
+    return dev_count + 1
+   

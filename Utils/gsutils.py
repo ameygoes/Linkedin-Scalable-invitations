@@ -12,6 +12,7 @@ class GoogleSheet:
         self.spread_sheet_name = DB_NAME
         self.work_sheet_name = TABLE_NAME
         self.work_sheet_cols = PROFILE_TABLE_COLUMNS
+        self.client = self.authenticate()
 
     def authenticate(self):
         # Path to the JSON credentials file downloaded from the Google Cloud Platform Console
@@ -26,96 +27,92 @@ class GoogleSheet:
 
         return client
 
-    def check_if_sheet_exists(self, client):
+    def check_if_sheet_exists(self):
         
         try:
-            spreadsheet = client.open(self.spread_sheet_name)
+            spreadsheet = self.client.open(self.spread_sheet_name)
             return True
         except gspread.exceptions.SpreadsheetNotFound:
             return False
 
-    def check_if_worksheet_exists(self, client):
-        spreadsheet_list = client.list_spreadsheet_files()
+    def check_if_worksheet_exists(self):
+        spreadsheet_list = self.client.list_spreadsheet_files()
         
         for spreadsheet in spreadsheet_list:
             if spreadsheet['name'] == self.spread_sheet_name:
                 try:
-                    worksheet = client.open(spreadsheet['name']).worksheet(self.work_sheet_name)
+                    worksheet = self.client.open(spreadsheet['name']).worksheet(self.work_sheet_name)
                     return True
                 except gspread.exceptions.WorksheetNotFound:
                     return False
         
         return False
 
-    def get_spreadsheet_url(self, client):
-        spreadsheet_list = client.list_spreadsheet_files()
+    def get_spreadsheet_url(self):
+        spreadsheet_list = self.client.list_spreadsheet_files()
         
         for spreadsheet in spreadsheet_list:
             if spreadsheet['name'] == self.spread_sheet_name:
-                spreadsheet_obj = client.open_by_key(spreadsheet['id'])
+                spreadsheet_obj = self.client.open_by_key(spreadsheet['id'])
                 return spreadsheet_obj.url
         
         return None
 
-    def create_spreadsheet(self, client):
+    def create_spreadsheet(self):
 
-        if not self.check_if_sheet_exists(client):
+        if not self.check_if_sheet_exists():
             # Create a new spreadsheet
-            spreadsheet = client.create(self.spread_sheet_name)
+            spreadsheet = self.client.create(self.spread_sheet_name)
 
-        spreadsheet_url = self.get_spreadsheet_url(client)
-        self.give_access_to_sheet(client)
+        spreadsheet_url = self.get_spreadsheet_url()
+        self.give_access_to_sheet()
         return spreadsheet_url
 
-    def create_worksheet(self, client, row):
-        spread_sheet = self.open_spreadsheet_by_name(client=client)
+    def create_worksheet(self, row):
+        spread_sheet = self.open_spreadsheet_by_name()
         
         # Add a worksheet to the spreadsheet
         worksheet = spread_sheet.add_worksheet(title=f"{self.work_sheet_name}", rows=row, cols=len(self.work_sheet_cols))
 
-    def delete_spreadsheet(self, client):
-        spreadsheet_list = client.list_spreadsheet_files()
+    def delete_spreadsheet(self):
+        spreadsheet_list = self.client.list_spreadsheet_files()
 
         for spreadsheet in spreadsheet_list:
             if spreadsheet['name'] == self.spread_sheet_name:
-                client.del_spreadsheet(spreadsheet['id'])
+                self.client.del_spreadsheet(spreadsheet['id'])
                 print(f"Deleted spreadsheet: {self.spread_sheet_name}")
                 return
         
         print(f"Spreadsheet '{self.spread_sheet_name}' not found.")
 
-    def open_work_sheet(self, client):
+    def open_work_sheet(self):
         # Open the spreadsheet
-        spreadsheet = client.open(self.spread_sheet_name)
+        spreadsheet = self.client.open(self.spread_sheet_name)
 
         # Open the sheet by sheet name
         sheet = spreadsheet.worksheet(self.work_sheet_name)
 
         return sheet
 
-    def open_spreadsheet_by_name(self, client):
+    def open_spreadsheet_by_name(self):
         # Open the spreadsheet
-        return client.open(self.spread_sheet_name)
+        return self.client.open(self.spread_sheet_name)
 
-    def give_access_to_sheet(self, client):
+    def give_access_to_sheet(self):
         # Share the spreadsheet with another account
         email_to_share = get_email()
-        spreadsheet = self.open_spreadsheet_by_name(client)
+        spreadsheet = self.open_spreadsheet_by_name()
         spreadsheet.share(email_to_share, perm_type='user', role='writer')  # Use 'owner' for admin access
 
         print("Shared the spreadsheet with concerned email")
 
-    def get_all_data_from_worksheet_in_df():
-        import gspread
-
-
-    def get_spreadsheet_data(self, client):
+    def get_spreadsheet_data(self):
         
-        spreadsheet_list = client.list_spreadsheet_files()
+        spreadsheet_list = self.client.list_spreadsheet_files()
 
         for spreadsheet in spreadsheet_list:
             if spreadsheet['name'] == self.spread_sheet_name:
-                spreadsheet_obj = client.open_by_key(spreadsheet['id'])
+                spreadsheet_obj = self.client.open_by_key(spreadsheet['id'])
                 sheet = spreadsheet_obj.worksheet(self.work_sheet_name)
                 records = sheet.get_all_records()
                 df = pd.DataFrame(records)
@@ -123,9 +120,8 @@ class GoogleSheet:
 
         return pd.DataFrame()
   
-
-    def update_spreadsheet(self, client, merged_df):
-        gc = gspread.client.Client(auth=client.auth)
+    def update_spreadsheet(self, merged_df):
+        gc = gspread.client.Client(auth=self.client.auth)
         spreadsheet_list = gc.list_spreadsheet_files()
 
         for spreadsheet in spreadsheet_list:

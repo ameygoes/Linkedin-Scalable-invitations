@@ -27,3 +27,15 @@ PORTFOLIO = configs['portfolio']
 
 # GSUTILITY CONFIGURATION
 ENCRYPTED_EMAIL = configs['encrypted_email']
+
+# SEARCH PEOPLE CONFIGURATION
+# SEARCH PEOPLE PARAMS  
+COMPANY_NAME = configs['company']
+SEARCH_RESULT_LIMIT = configs['search_result_limit']
+REGION = configs['region']
+NETWORK_DEPTHS = configs['network_depths']
+KEYWORD_TITLE = configs['keyword_title']
+
+# MAX API CALLS PER HOUR LIMIT
+MAX_LINKEDIN_API_CALLS_LIMIT = 350
+

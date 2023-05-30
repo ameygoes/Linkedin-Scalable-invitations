@@ -9,3 +9,21 @@ portfolio: "https://ameyportfolio.netlify.app/"
 
 # GS_UTILS
 encrypted_email: "gAAAAABkbwAsyNzGFE3Mh723eOm6qmSzFtowPZ5lqsWFXE4ZRiD__x2JqpK3Ke4ySM8b1kDeWVbqTwpHNLCuisSNLdxWNhugjmM231yGXTtzRccYRitaPok="
+
+# SEARCH PEOPLE PARAMS  
+company: "google"
+search_result_limit: 30
+region: 
+  - "103644278" # USA
+network_depths: 
+  - "S"
+  - "O"
+keyword_title:
+  - "Recruiter"
+  - "Technical Recruiter"
+  - "Talent Acquisition Specialist"
+  # - Data Engineer
+  # - Data Analyst
+  # - Data Scientist
+  # - Data Architecht
+  # - Data Manager
