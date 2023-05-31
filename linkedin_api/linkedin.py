@@ -13,6 +13,7 @@ from urllib.parse import quote, urlencode
 from linkedin_api.client import Client
 from linkedin_api.utils.helpers import (
     append_update_post_field_to_posts_list,
+    generateUUID,
     get_id_from_urn,
     get_list_posts_sorted_without_promoted,
     get_update_author_name,
@@ -90,6 +91,7 @@ class Linkedin(object):
         evade()
 
         url = f"{self.client.API_BASE_URL if not base_request else self.client.LINKEDIN_BASE_URL}{uri}"
+        print(url)
         return self.client.session.get(url, **kwargs)
 
     def _post(self, uri, evade=default_evade, base_request=False, **kwargs):
@@ -206,6 +208,7 @@ class Linkedin(object):
         :return: List of search results
         :rtype: list
         """
+        print("Here in the search")
         count = Linkedin._MAX_SEARCH_COUNT
         if limit is None:
             limit = -1
@@ -216,24 +219,28 @@ class Linkedin(object):
             if limit > -1 and limit - len(results) < count:
                 count = limit - len(results)
             default_params = {
-                "count": str(count),
+                "action": "update",
+                # "count": str(count),
                 "filters": "List()",
                 "origin": "GLOBAL_SEARCH_HEADER",
-                "q": "all",
-                "start": len(results) + offset,
-                "queryContext": "List(spellCorrectionEnabled->true,relatedSearchesEnabled->true,kcardTypes->PROFILE|COMPANY)",
+                # "q": "all",
+                # "start": len(results) + offset,
+                # "queryContext": "List(spellCorrectionEnabled->true,relatedSearchesEnabled->true,kcardTypes->PROFILE|COMPANY)",
+                "searchId": generateUUID()
+
             }
             default_params.update(params)
-
+            print(f"/search/blended?{urlencode(default_params, safe='(),')}")
             res = self._fetch(
                 f"/search/blended?{urlencode(default_params, safe='(),')}",
+                # f"/voyagerSearchDashSearchHome",
                 headers={"accept": "application/vnd.linkedin.normalized+json+2.1"},
             )
             data = res.json()
-
+            print(json.dumps(data, indent=2))
             new_elements = []
             elements = data.get("data", {}).get("elements", [])
-
+            print(elements)
             for element in elements:
                 new_elements.extend(element.get("elements", {}))
                 # not entirely sure what extendedElements generally refers to - keyword search gives back a single job?
@@ -365,7 +372,7 @@ class Linkedin(object):
         if keywords:
             params["keywords"] = keywords
 
-        data = self.search( params, limit=limit, offset=offset, **kwargs)
+        data = self.search( params, limit=limit, **kwargs)
         results = []
         for item in data:
             # print(json.dumps(item,indent=2))

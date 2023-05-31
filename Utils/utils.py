@@ -111,6 +111,8 @@ def get_df_items_for_search_results(profile):
         'category': profile.profile_category,
         'connection_req_withdrawn_status': False,
         'connection_req_withdrawn_date': None,
+        'connection_req_sent_status': False,
+        'connection_req_sent_date': None,
         'record_added_to_sheet': getCurrentDate()}
 
 def get_concatinated_df(df1, df2):

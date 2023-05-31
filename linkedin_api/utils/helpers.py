@@ -1,6 +1,10 @@
 import random
 import base64
+import uuid
 
+def generateUUID():
+    # Generate a random UUID
+    return str(uuid.uuid4())
 
 def get_id_from_urn(urn):
     """

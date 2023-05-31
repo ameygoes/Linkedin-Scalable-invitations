@@ -115,10 +115,17 @@ class GoogleSheet:
                 spreadsheet_obj = self.client.open_by_key(spreadsheet['id'])
                 sheet = spreadsheet_obj.worksheet(self.work_sheet_name)
                 records = sheet.get_all_records()
-                df = pd.DataFrame(records)
-                return df
 
-        return pd.DataFrame()
+                if records:
+                    df = pd.DataFrame(records)
+                    return df
+                else:
+                    break
+
+        df = pd.DataFrame(columns=self.work_sheet_cols)
+        df.loc[0] = ''
+        df = df.reset_index(drop=True)
+        return df
   
     def update_spreadsheet(self, merged_df):
         gc = gspread.client.Client(auth=self.client.auth)

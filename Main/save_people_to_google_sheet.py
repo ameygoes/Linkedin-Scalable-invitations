@@ -19,7 +19,7 @@ df_people_from_gsheet = gsheet.get_spreadsheet_data()
 
 # Assuming your DataFrame is named df
 category_searching = get_overall_category(KEYWORD_TITLE)
-counts = df_people_from_gsheet[df_people_from_gsheet['profile_latest_company'] == COMPANY_NAME].groupby('category').size()
+counts = df_people_from_gsheet[df_people_from_gsheet['profile_latest_company'].apply(lambda x: x.lower()) == COMPANY_NAME.lower()].groupby('category').size()
 OFFSET_LIMIT = get_offset_count(counts,category_searching)
 
 
