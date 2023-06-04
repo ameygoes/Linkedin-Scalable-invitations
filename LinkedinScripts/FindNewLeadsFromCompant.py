@@ -115,28 +115,30 @@ class LinkedIn:
             'x-li-track': '{"clientVersion":"1.7.3019","osName":"web","timezoneOffset":6,"deviceFormFactor":"DESKTOP","mpName":"voyager-web","displayDensity":1,"displayWidth":1366,"displayHeight":768}',
             'x-restli-protocol-version': '2.0.0'
         }
-        resp = self.s.get('https://www.linkedin.com/voyager/api/search/blended?count=10&filters=List(currentCompany-%3E{},resultType-%3EPEOPLE)&origin=COMPANY_PAGE_CANNED_SEARCH&q=all&queryContext=List(spellCorrectionEnabled-%3Etrue)&start={}'.format(company_id,(int(page_no)-1) * 10), headers=headers).json()
-        
-        profiles = resp.get('data').get('elements')[0].get('elements')
+        # resp = self.s.get('https://www.linkedin.com/voyager/api/search/blended?count=10&filters=List(currentCompany-%3E{},resultType-%3EPEOPLE)&origin=COMPANY_PAGE_CANNED_SEARCH&q=all&queryContext=List(spellCorrectionEnabled-%3Etrue)&start={}'.format(company_id,(int(page_no)-1) * 10), headers=headers).json()
+        resp = self.s.get("https://www.linkedin.com/search/results/people/?company=google&geoUrn=%5B%22103644278%22%5D&keywords=recruiters&network=%5B%22S%22%2C%22O%22%5D&origin=GLOBAL_SEARCH_HEADER&sid=xEf")
+        print(resp.content)
+        return resp
+        # profiles = resp.get('data').get('elements')[0].get('elements')
 
-        all_profile_links = []
-        if need_count:
-            page_count = resp.get('data').get('paging').get('total')
-        for profile in profiles:
-            person_name = profile.get('title').get('text')
-            profile_link = profile.get('navigationUrl')
-            headline = profile.get('headline').get('text')
-            country = profile.get('subline').get('text')
-            data = []
-            data.append(profile_link)
-            data.append(person_name)
-            data.append(headline)
-            data.append(country)
-            self.saveRecord(data)
-        if need_count:
-            return all_profile_links, page_count
-        else:
-            return all_profile_links
+        # all_profile_links = []
+        # if need_count:
+        #     page_count = resp.get('data').get('paging').get('total')
+        # for profile in profiles:
+        #     person_name = profile.get('title').get('text')
+        #     profile_link = profile.get('navigationUrl')
+        #     headline = profile.get('headline').get('text')
+        #     country = profile.get('subline').get('text')
+        #     data = []
+        #     data.append(profile_link)
+        #     data.append(person_name)
+        #     data.append(headline)
+        #     data.append(country)
+        #     self.saveRecord(data)
+        # if need_count:
+        #     return all_profile_links, page_count
+        # else:
+        #     return all_profile_links
 
     def getCompanyID(self, company_link):
         try:
@@ -164,13 +166,15 @@ if __name__ == "__main__":
     if login_state:
         print("Logged in to LinkedIn!")
         company_id = connection.getCompanyID(target_company_link)
+        print(company_id)
         if company_id is not None:
             print("Collecting all company member profiles upto 10000!")
-            profile_list, page_count = connection.listProfiles(company_id, 1, True)
+            resp = connection.listProfiles(company_id, 1, True)
+            # profile_list, page_count = connection.listProfiles(company_id, 1, True)
             print("=============================== COMPANY list profile response ===============================")
-            print(profile_list, page_count)
-            for page_no in range(2,page_count+1):
-                profile_list.extend(connection.listProfiles(company_id, page_no))
+            # print(profile_list, page_count)
+            # for page_no in range(2,page_count+1):
+            #     profile_list.extend(connection.listProfiles(company_id, page_no))
             # print("Profile list collected and saved! Extracting emails ...")
             # all_emails = connection.bulkScan(profile_list)
             # for email in all_emails:
