@@ -12,17 +12,17 @@ encrypted_email: "gAAAAABkbwAsyNzGFE3Mh723eOm6qmSzFtowPZ5lqsWFXE4ZRiD__x2JqpK3Ke
 
 # SEARCH PEOPLE PARAMS  
 company: "google"
-search_result_limit: 30
+search_result_limit: 100
 region: 
   - "103644278" # USA
 network_depths: 
   - "S"
   - "O"
 keyword_title:
-  - "Recruiter"
-  - "Technical Recruiter"
-  - "Talent Acquisition Specialist"
-  # - Data Engineer
+  # - "Recruiter"
+  # - "Technical Recruiter"
+  # - "Talent Acquisition Specialist"
+  - Data Engineer
   # - Data Analyst
   # - Data Scientist
   # - Data Architecht

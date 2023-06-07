@@ -104,7 +104,6 @@ def fetch_employees(company_id, fetch_page_details, offset=0):
     schoolFilter=[],
     schoolFreetext=[],
     searchId=["b418ee28-c4de-4324-a085-ffe3525acddd"],
-
     )
     uri = "/graphql?" + variables
     r = api._fetch(uri.format(offset=offset))

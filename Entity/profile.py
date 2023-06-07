@@ -77,13 +77,6 @@ class Profile:
         self.profile_location_geo_urn_id = profile_json.get('geoCountryUrn')
 
 
-        if len(profile_json['experience']):
-            self.profile_latest_company = profile_json['experience'][0]['companyName']
-            self.profile_latest_job_title = profile_json['experience'][0]['title']
-            self.profile_category = getProfileCategory(self.profile_latest_job_title)
-            if not self.profile_latest_company == "Self-employed":
-                self.profile_latest_company_urn = get_id_from_urn(profile_json['experience'][0]['companyUrn'])
-
         if profile_json.get('experience'):
             experience = profile_json['experience'][0]
             self.profile_latest_company = experience.get('companyName')
@@ -100,7 +93,8 @@ class Profile:
 
         if profile_json.get('education'):
             education = profile_json['education'][0]
-            self.profile_school_urn_id = get_id_from_urn(education['school'].get('objectUrn'))
+            if education.get('school'):
+                self.profile_school_urn_id = get_id_from_urn(education['school'].get('objectUrn'))
 
 
     def parseInvitationJSON(self, invitation_json):

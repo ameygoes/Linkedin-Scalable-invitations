@@ -1,5 +1,5 @@
 import mysql.connector as mysqlConnector
-from Configs.dbConfigs import HOST_NAME, DB_NAME, DB_USER_NAME, PORT_NAME, DB_PASSWORD, CHECK_IF_EXISTS
+from Configs.dbConfigs import HOST_NAME, DB_NAME, DB_USER_NAME, PORT_NAME, DB_PASSWORD, CHECK_IF_EXISTS, SEARCH_QUERY
 from Configs.envrinomentSpecificConfgis import TABLE_NAME
 import os
 import datetime
@@ -7,7 +7,14 @@ import pandas as pd
 
 
 # RETURN ERROR DETAILS STRING FOR LOGGING
-
+def get_sql_connector():
+    return mysqlConnector.connect(
+        host=HOST_NAME,
+        user=DB_USER_NAME,
+        passwd=DB_PASSWORD,
+        database=DB_NAME,
+        port=PORT_NAME
+    )
 
 def getErrorDetails(errorObject):
     return "{} \n {} \n {} \n {}".format(
@@ -21,13 +28,7 @@ def getErrorDetails(errorObject):
 # EXECUTE INSERT COMMAND
 def executeCommand(command):
     # Open SQL Connection
-    sqlConnector = mysqlConnector.connect(
-        host=HOST_NAME,
-        user=DB_USER_NAME,
-        passwd=DB_PASSWORD,
-        database=DB_NAME,
-        port=PORT_NAME
-    )
+    sqlConnector = get_sql_connector()
 
     mySQLCursor = sqlConnector.cursor()
 
@@ -48,13 +49,7 @@ def executeCommand(command):
 
 def execute_insert_command(command, vals):
     # Open SQL Connection
-    sqlConnector = mysqlConnector.connect(
-        host=HOST_NAME,
-        user=DB_USER_NAME,
-        passwd=DB_PASSWORD,
-        database=DB_NAME,
-        port=PORT_NAME
-    )
+    sqlConnector = get_sql_connector()
 
     mySQLCursor = sqlConnector.cursor()
     try:
@@ -84,13 +79,7 @@ def execute_get_command(command):
     # Open SQL Connection
     returnOneRow = None
     
-    sqlConnector = mysqlConnector.connect(
-        host=HOST_NAME,
-        user=DB_USER_NAME,
-        passwd=DB_PASSWORD,
-        database=DB_NAME,
-        port=PORT_NAME
-    )
+    sqlConnector = get_sql_connector()
 
     mySQLCursor = sqlConnector.cursor()
 
@@ -111,16 +100,7 @@ def execute_get_command(command):
     # Return one Row
     return returnOneRow
 
-def check_if_entry_exists_in_db(query):
-
-    sqlConnector = mysqlConnector.connect(
-        host=HOST_NAME,
-        user=DB_USER_NAME,
-        passwd=DB_PASSWORD,
-        database=DB_NAME,
-        port=PORT_NAME
-    )
-
+def check_if_entry_exists_in_db(query, sqlConnector):
     mySQLCursor = sqlConnector.cursor()
 
     mySQLCursor.execute(query)
@@ -134,13 +114,7 @@ def check_if_entry_exists_in_db(query):
 
 def readSQLQueryinPD(command):
 # Connect to the database
-    sqlConnector = mysqlConnector.connect(
-        host=HOST_NAME,
-        user=DB_USER_NAME,
-        passwd=DB_PASSWORD,
-        database=DB_NAME,
-        port=PORT_NAME
-    )
+    sqlConnector =get_sql_connector()
 
     # Read the query results into a pandas DataFrame
     df = pd.read_sql_query(command, con=sqlConnector)
@@ -148,3 +122,22 @@ def readSQLQueryinPD(command):
     sqlConnector.close()
 
     return df
+
+def insert_bulk_data(data, query):
+    # Connect to the database
+    sqlConnector = get_sql_connector()
+
+    # Fetch existing URN IDs from the database
+    cursor = sqlConnector.cursor()
+    data_to_insert = data.values.tolist() 
+
+    # Perform bulk insertion
+    try:
+        cursor.executemany(query, data_to_insert)
+        sqlConnector.commit()
+    except Exception as e:
+        print(getErrorDetails(e))
+    finally:  
+        # Close the database connection
+        cursor.close()
+        sqlConnector.close()

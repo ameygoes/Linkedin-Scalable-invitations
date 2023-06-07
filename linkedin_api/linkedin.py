@@ -13,6 +13,8 @@ from urllib.parse import quote, urlencode
 from linkedin_api.client import Client
 from linkedin_api.utils.helpers import (
     append_update_post_field_to_posts_list,
+    build_variable_for_search_query,
+    fetch_necessary_results_from_search_data,
     generateUUID,
     get_id_from_urn,
     get_list_posts_sorted_without_promoted,
@@ -213,7 +215,6 @@ class Linkedin(object):
         :return: List of search results
         :rtype: list
         """
-        print("Here in the search")
         count = Linkedin._MAX_SEARCH_COUNT
         if limit is None:
             limit = -1
@@ -264,6 +265,40 @@ class Linkedin(object):
             self.logger.debug(f"results grew to {len(results)}")
 
         return results
+
+    def searchV2(self, url, fetch_page_details, offset=0):
+        """Perform a LinkedIn search.
+
+        :param params: Search parameters (see code)
+        :type params: dict
+        :param limit: Maximum length of the returned list, defaults to -1 (no limit)
+        :type limit: int, optional
+        :param offset: Index to start searching from
+        :type offset: int, optional
+
+
+        :return: List of search results
+        :rtype: list
+        """
+        res = self._fetch(
+            f"/graphql?{url}".format(offset=offset)
+        )
+
+            
+        if not res.ok:
+            print(f"[fetch_employees()]: Fail! LinkedIn returned status code {res.status_code} ({res.reason})")
+            return
+
+        print(f"[fetch_employees()]: OK! LinkedIn returned status code {res.status_code} ({res.reason})")
+        res = res.json()
+
+        if not res["data"]["searchDashClustersByAll"]:
+            print(f"Bad json. LinkedIn returned error:", res["errors"][0]["message"])
+            return
+        
+        if fetch_page_details:
+            return res["data"]["searchDashClustersByAll"]["paging"]["count"], res["data"]["searchDashClustersByAll"]["paging"]["total"]
+        return res["data"]["searchDashClustersByAll"]
 
     def search_people(
         self,
@@ -395,6 +430,84 @@ class Linkedin(object):
                 }
             )
 
+        return results
+
+    
+    def search_peoplev2(
+        self,
+        keywords=None,
+        limit = 100,
+        offset = 0,
+        **kwargs,
+    ):
+        """Perform a LinkedIn search for people.
+
+        :param keywords: Keywords to search on
+        :type keywords: str, optional
+        :param current_company: A list of company URN IDs (str)
+        :type current_company: list, optional
+        :param past_companies: A list of company URN IDs (str)
+        :type past_companies: list, optional
+        :param regions: A list of geo URN IDs (str)
+        :type regions: list, optional
+        :param industries: A list of industry URN IDs (str)
+        :type industries: list, optional
+        :param schools: A list of school URN IDs (str)
+        :type schools: list, optional
+        :param profile_languages: A list of 2-letter language codes (str)
+        :type profile_languages: list, optional
+        :param contact_interests: A list containing one or both of "proBono" and "boardMember"
+        :type contact_interests: list, optional
+        :param service_categories: A list of service category URN IDs (str)
+        :type service_categories: list, optional
+        :param network_depth: Deprecated, use `network_depths`. One of "F", "S" and "O" (first, second and third+ respectively)
+        :type network_depth: str, optional
+        :param network_depths: A list containing one or many of "F", "S" and "O" (first, second and third+ respectively)
+        :type network_depths: list, optional
+        :param include_private_profiles: Include private profiles in search results. If False, only public profiles are included. Defaults to False
+        :type include_private_profiles: boolean, optional
+        :param keyword_first_name: First name
+        :type keyword_first_name: str, optional
+        :param keyword_last_name: Last name
+        :type keyword_last_name: str, optional
+        :param keyword_title: Job title
+        :type keyword_title: str, optional
+        :param keyword_company: Company name
+        :type keyword_company: str, optional
+        :param keyword_school: School name
+        :type keyword_school: str, optional
+        :param connection_of: Connection of LinkedIn user, given by profile URN ID
+        :type connection_of: str, optional
+
+        :return: List of profiles (minimal data only)
+        :rtype: list
+        """
+        count = Linkedin._MAX_SEARCH_COUNT
+        if limit is None:
+            limit = -1
+        
+        variables = build_variable_for_search_query(keywords=keywords, **kwargs)
+
+        # FIRST GET PAGE DETAILS
+        records_per_page, total_num_records = self.searchV2(variables, fetch_page_details = True, offset = offset)
+        total_num_pages = total_num_records // records_per_page
+        results = []
+        for page in range(1, total_num_pages + 1):
+            print(f"{offset + page*records_per_page} : offset")
+            if limit > -1 and limit - len(results) < count:
+                count = limit - len(results)
+
+            employees_data = self.searchV2(variables, fetch_page_details = False, offset= offset + page*records_per_page)
+            if not employees_data or employees_data.get("_type") != "com.linkedin.restli.common.CollectionResponse":
+                continue
+            results.extend(fetch_necessary_results_from_search_data(employees_data))
+    
+                
+            if (
+                (-1 < limit <= len(results))  # if our results exceed set limit
+                or len(results) / count >= Linkedin._MAX_REPEATED_REQUESTS
+            ):
+                break
         return results
 
     def search_companies(self, limit=50, keywords=None, **kwargs):

@@ -11,10 +11,10 @@ CREATE TABLE IF NOT EXISTS linkedin_automation_profile (
     profile_latest_job_title VARCHAR(255),
     category VARCHAR(255),
     connection_req_sent_status BOOLEAN,
-    connection_req_sent_date DATE,
+    connection_req_sent_date VARCHAR(15),
     connection_req_withdrawn_status BOOLEAN,
-    connection_req_withdrawn_date DATE,
-    record_added_to_sheet DATETIME,
+    connection_req_withdrawn_date VARCHAR(15),
+    record_added_to_db VARCHAR(15),
     PRIMARY KEY (profile_urn_id)
 );
 
@@ -28,9 +28,9 @@ CREATE TABLE IF NOT EXISTS linkedin_automation_profile_test (
     profile_latest_job_title VARCHAR(255),
     category VARCHAR(255),
     connection_req_sent_status BOOLEAN DEFAULT false,
-    connection_req_sent_date DATE,
+    connection_req_sent_date VARCHAR(15),
     connection_req_withdrawn_status BOOLEAN DEFAULT false,
-    connection_req_withdrawn_date DATE,
-    record_added_to_sheet DATETIME,
+    connection_req_withdrawn_date VARCHAR(15),
+    record_added_to_db VARCHAR(15),
     PRIMARY KEY (profile_urn_id)
 );

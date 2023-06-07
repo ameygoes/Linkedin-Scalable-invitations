@@ -263,3 +263,67 @@ def generate_trackingId():
     random_int_array = [random.randrange(256) for _ in range(16)]
     rand_byte_array = bytearray(random_int_array)
     return str(base64.b64encode(rand_byte_array))[2:-1]
+
+
+def build_variable_for_search_query(keywords, offset_placeholder="{offset}", **kwargs):
+    filters = []
+    for key, value in kwargs.items():
+        if value is not None and value != "" and value != []:
+            if isinstance(value, list):
+                value_list = ','.join(map(str, value))
+                filters.append(f"(key:{key},value:List({value_list}))")
+            else:
+                filters.append(f"(key:{key},value:List({value}))")
+    if filters:
+        variables = f"variables=(start:{offset_placeholder},origin:FACETED_SEARCH,query:(keywords:{','.join(keywords)},flagshipSearchIntent:SEARCH_SRP,queryParameters:List({','.join(filters)}),includeFiltersInResponse:false))&&queryId=voyagerSearchDashClusters.b0928897b71bd00a5a7291755dcd64f0"
+        return variables
+    else:
+        return ""
+    
+def get_entity_attribute(entity, keys):
+        if isinstance(keys, str):
+            keys = [keys]
+
+        current_entity = entity
+        for key in keys:
+            current_entity = current_entity.get(key)
+            if not current_entity:
+                return ""
+
+        return current_entity
+
+def fetch_necessary_results_from_search_data(employees_data):
+    results = []
+
+    for cluster in employees_data.get("elements", []):
+        if cluster.get("_type") != "com.linkedin.voyager.dash.search.SearchClusterViewModel":
+            continue
+
+        for item in cluster.get("items", []):
+            if item.get("_type") != "com.linkedin.voyager.dash.search.SearchItem":
+                continue
+
+            entity_result = item.get("item", {}).get("entityResult")
+            if not entity_result or entity_result.get("_type") != "com.linkedin.voyager.dash.search.EntityResultViewModel":
+                continue
+            try:
+                try:
+                    member_distance = get_entity_attribute(entity_result, ["entityCustomTrackingInfo", "memberDistance"])
+                    distance = int(''.join(filter(str.isdigit, member_distance)))
+                except ValueError:
+                    distance = 0
+
+                employee =  {
+                    "urn_id": get_entity_attribute(entity_result, "entityUrn").split(":fsd_profile:")[1].split(",")[0],
+                    "distance": distance,
+                    "jobtitle": get_entity_attribute(entity_result, ["primarySubtitle", "text"]),
+                    "location": get_entity_attribute(entity_result, ["secondarySubtitle", "text"]),
+                    "name": get_entity_attribute(entity_result, ["title", "text"]),
+                }
+                print(employee["name"])
+                results.append(employee)
+            except Exception as e:
+                print(f"Exception {e} occurred while processing search data")
+                exit(1)
+     
+        return results

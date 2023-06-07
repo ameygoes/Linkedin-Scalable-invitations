@@ -8,8 +8,8 @@ from fuzzywuzzy import fuzz
 
 # CATEGORIES FOR DECIDING
 categories = [
-    "HR",
-    "DATA"
+    "hr",
+    "data"
 ]
 def getCurrentTime():
     return datetime.now()
@@ -78,21 +78,19 @@ def cache_public_profile_id(api):
     return readJSONfile(CACHE_FILE)
 
 def getProfileCategory(job_title):
-    
-
-    job_titles = ['Recruiter', 'Technical Recruiter', 'Talent Acquisition Specialist', 'Talent Acquisition Partner', 'Recruitment Specialist', 'Recruitment Consultant', 'Talent Sourcer', 'Staffing Specialist', 'HR Recruiter', 'Hiring Specialist', 'Recruitment Coordinator', 'Recruitment Manager', 'Talent Scout', 'Headhunter', 'Recruitment Executive', 'Talent Acquisition Manager', 'Recruitment Team Lead', 'Recruitment Associate', 'Sourcing Specialist', 'Talent Acquisition Coordinator', 'Recruitment Lead', 'Recruitment Analyst', 'Senior Technical Recruiter', 'Junior Recruiter', 'Recruitment Operations Specialist', 'Corporate Recruiter', 'Campus Recruiter', 'Employment Specialist', 'RPO Recruiter', 'Recruitment Business Partner']
 
     # Threshold for matching percentage (70% in this example)
-    match_threshold = 70
+    match_threshold = 80
+
+    # Predefined job titles
+    predefined_titles = ["Recruiter", "Technical Recruiter", "Talent Acquisition Specialist", "Senior Recruiter", "Corporate Recruiter", "Executive Recruiter", "IT Recruiter", "Campus Recruiter", "Staffing Specialist", "Sourcing Specialist"]
 
     # Check if the jobTitle partially matches any job title from the list
-    matches = [title for title in job_title if fuzz.partial_ratio(job_title.lower(), title.lower()) >= match_threshold]
+    matches = [title for title in predefined_titles if fuzz.partial_ratio(job_title.lower(), title.lower()) >= match_threshold]
 
     # If there are any matches, assign the category "HR"
-    category = "HR" if matches else "DEV"
-
-    # print("Matches:", matches)
-    # print("Category:", category)
+    category = "hr" if matches else "data"
+    
     return category
 
 def checkIfKeyExists(response, key_to_check):
@@ -113,7 +111,7 @@ def get_df_items_for_search_results(profile):
         'connection_req_withdrawn_date': None,
         'connection_req_sent_status': False,
         'connection_req_sent_date': None,
-        'record_added_to_sheet': getCurrentDate()}
+        'record_added_to_db': getCurrentDate()}
 
 def get_concatinated_df(df1, df2):
     df = pd.concat([df1, df2], ignore_index=True)
