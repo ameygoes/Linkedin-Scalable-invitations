@@ -13,12 +13,15 @@ PORT_NAME = "3306"
 PROD_TABLE_NAME = "linkedin_automation_profile"
 TEST_TABLE_NAME = "linkedin_automation_profile_test"
 
+# Prepare the SQL query with placeholders for multiple profile URN IDs
+CHECK_IF_EXISTS_IN_BULK = "SELECT profile_urn_id FROM {} WHERE profile_urn_id IN ({})"
+
 
 SEARCH_QUERY = "SELECT count(*) FROM {} WHERE profile_urn_id = '{}'"
 CHECK_DB = "SHOW DATABASES LIKE '{}'"
 CHECK_TABLE = "SHOW TABLES LIKE '{}'"
 INSERT_QUERY = "INSERT INTO {} VALUES('{}', '{}', '{}', '{}', {}, {}, '{}', {}, {})"
-CHECK_IF_EXISTS =  "SELECT COUNT(*) FROM {} WHERE email = %s"
+CHECK_IF_EXISTS =  "SELECT COUNT(*) FROM {} WHERE `profile_urn_id` = %s"
 INSERT_QUERY_PROFILE = "INSERT INTO {} (`public_id`, `profile_urn_id`, `profile_firstName`, `profile_lastName`, `profile_network_distance`, `profile_latest_company`, `profile_latest_job_title`, `category`, `connection_req_sent_status`, `connection_req_sent_date`, `connection_req_withdrawn_status`, `connection_req_withdrawn_date`, `record_added_to_db`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
 UPDATE_QUERY_STR = "UPDATE {} SET {} = '{}' WHERE profile_urn_id = '{}'"
 UPDATE_QUERY_NON_STR = "UPDATE {} SET {} = {} WHERE profile_urn_id = '{}'"

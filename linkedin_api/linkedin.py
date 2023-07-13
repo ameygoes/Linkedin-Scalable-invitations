@@ -93,7 +93,6 @@ class Linkedin(object):
         evade()
 
         url = f"{self.client.API_BASE_URL if not base_request else self.client.LINKEDIN_BASE_URL}{uri}"
-        print(url)
         return self.client.session.get(url, **kwargs)
     
     def _get(self, uri, evade=default_evade, base_request=False, **kwargs):
@@ -487,7 +486,7 @@ class Linkedin(object):
             limit = -1
         
         variables = build_variable_for_search_query(keywords=keywords, **kwargs)
-
+        print(f"========================\n{variables}")
         # FIRST GET PAGE DETAILS
         records_per_page, total_num_records = self.searchV2(variables, fetch_page_details = True, offset = offset)
         total_num_pages = total_num_records // records_per_page

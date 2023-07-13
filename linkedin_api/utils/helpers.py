@@ -275,7 +275,7 @@ def build_variable_for_search_query(keywords, offset_placeholder="{offset}", **k
             else:
                 filters.append(f"(key:{key},value:List({value}))")
     if filters:
-        variables = f"variables=(start:{offset_placeholder},origin:FACETED_SEARCH,query:(keywords:{','.join(keywords)},flagshipSearchIntent:SEARCH_SRP,queryParameters:List({','.join(filters)}),includeFiltersInResponse:false))&&queryId=voyagerSearchDashClusters.b0928897b71bd00a5a7291755dcd64f0"
+        variables = f"variables=(start:{offset_placeholder},origin:FACETED_SEARCH,query:(keywords:{keywords},flagshipSearchIntent:SEARCH_SRP,queryParameters:List({','.join(filters)}),includeFiltersInResponse:false))&&queryId=voyagerSearchDashClusters.b0928897b71bd00a5a7291755dcd64f0"
         return variables
     else:
         return ""
@@ -320,7 +320,6 @@ def fetch_necessary_results_from_search_data(employees_data):
                     "location": get_entity_attribute(entity_result, ["secondarySubtitle", "text"]),
                     "name": get_entity_attribute(entity_result, ["title", "text"]),
                 }
-                print(employee["name"])
                 results.append(employee)
             except Exception as e:
                 print(f"Exception {e} occurred while processing search data")

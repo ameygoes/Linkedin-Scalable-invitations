@@ -1,10 +1,11 @@
 import mysql.connector as mysqlConnector
-from Configs.dbConfigs import HOST_NAME, DB_NAME, DB_USER_NAME, PORT_NAME, DB_PASSWORD, CHECK_IF_EXISTS, SEARCH_QUERY
+from Configs.dbConfigs import CHECK_IF_EXISTS_IN_BULK, HOST_NAME, DB_NAME, DB_USER_NAME, PORT_NAME, DB_PASSWORD, CHECK_IF_EXISTS, SEARCH_QUERY
 from Configs.envrinomentSpecificConfgis import TABLE_NAME
 import os
 import datetime
 import pandas as pd
-
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning, module="pandas")
 
 # RETURN ERROR DETAILS STRING FOR LOGGING
 def get_sql_connector():
@@ -124,13 +125,28 @@ def readSQLQueryinPD(command):
     return df
 
 def insert_bulk_data(data, query):
+    
+    profile_urn_id_list = data['profile_urn_id'].tolist()
+
+
     # Connect to the database
     sqlConnector = get_sql_connector()
+    cursor = sqlConnector.cursor()
+
+    query_to_check_if_exists_in_bulk = CHECK_IF_EXISTS_IN_BULK.format(TABLE_NAME, ",".join(["%s"] * len(profile_urn_id_list)))
+    cursor.execute(query_to_check_if_exists_in_bulk, tuple(profile_urn_id_list))
+
+    # Fetch the results
+    existing_urn_ids = [result[0] for result in cursor.fetchall()]
+
+    # Filter the DataFrame to retain only rows with non-existing profile_urn_ids
+    filtered_data = data[~data['profile_urn_id'].isin(existing_urn_ids)]
+
 
     # Fetch existing URN IDs from the database
-    cursor = sqlConnector.cursor()
-    data_to_insert = data.values.tolist() 
-
+    # Convert the filtered DataFrame to a list of tuples
+    data_to_insert = filtered_data.to_records(index=False).tolist()
+    
     # Perform bulk insertion
     try:
         cursor.executemany(query, data_to_insert)

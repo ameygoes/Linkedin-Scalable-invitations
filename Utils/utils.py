@@ -41,8 +41,9 @@ def readJSONfile(filepath):
     return data
 
 def get_id_from_urn(urn):
-    return urn.split(":")[3]
-
+    if urn:
+        return urn.split(":")[3]
+    return urn
 def cache_public_profile_id(api):
 
     """
@@ -79,19 +80,21 @@ def cache_public_profile_id(api):
 
 def getProfileCategory(job_title):
 
-    # Threshold for matching percentage (70% in this example)
-    match_threshold = 80
+    if job_title:
+        # Threshold for matching percentage (70% in this example)
+        match_threshold = 80
 
-    # Predefined job titles
-    predefined_titles = ["Recruiter", "Technical Recruiter", "Talent Acquisition Specialist", "Senior Recruiter", "Corporate Recruiter", "Executive Recruiter", "IT Recruiter", "Campus Recruiter", "Staffing Specialist", "Sourcing Specialist"]
+        # Predefined job titles
+        predefined_titles = ["Recruiter", "Technical Recruiter", "Talent Acquisition Specialist", "Senior Recruiter", "Corporate Recruiter", "Executive Recruiter", "IT Recruiter", "Campus Recruiter", "Staffing Specialist", "Sourcing Specialist"]
 
-    # Check if the jobTitle partially matches any job title from the list
-    matches = [title for title in predefined_titles if fuzz.partial_ratio(job_title.lower(), title.lower()) >= match_threshold]
+        # Check if the jobTitle partially matches any job title from the list
+        matches = [title for title in predefined_titles if fuzz.partial_ratio(job_title.lower(), title.lower()) >= match_threshold]
 
-    # If there are any matches, assign the category "HR"
-    category = "hr" if matches else "data"
-    
-    return category
+        # If there are any matches, assign the category "HR"
+        category = "hr" if matches else "data"
+        
+        return category
+    return "default_category"
 
 def checkIfKeyExists(response, key_to_check):
     if key_to_check in response:
